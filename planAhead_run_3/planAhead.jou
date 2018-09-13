@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# PlanAhead v14.2 (64-bit)
+# Build 194362 by xbuild on Fri Jul 20 18:52:11 MDT 2012
+# Start of session at: Fri Nov 22 16:38:19 2013
+# Process ID: 5572
+# Log file: F:/PROJECTS/final_year_project/planAhead_run_3/planAhead.log
+# Journal file: F:/PROJECTS/final_year_project/planAhead_run_3/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source F:/PROJECTS/final_year_project/pa.fromHdl.tcl
+startgroup
+set_property package_pin K17 [get_ports clk3]
+endgroup
+set_property is_loc_fixed false [get_ports [list  clk3]]
+set_property pulltype PULLUP [get_ports [list clk3]]
+set_property pulltype PULLDOWN [get_ports [list clk3]]
+set_property iostandard LVCMOS25 [get_ports [list clk3]]
+set_property is_loc_fixed true [get_ports [list  clk3]]
+save_design

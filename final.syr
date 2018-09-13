@@ -1,0 +1,2203 @@
+Release 14.2 - xst P.28xd (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> Reading design: final.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "final.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "final"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : final
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Block
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Block
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "xtime.v" in library work
+Compiling verilog file "subbyte.v" in library work
+Module <xtime> compiled
+Compiling verilog file "shiftRow.v" in library work
+Module <subbyte> compiled
+Compiling verilog file "mult.v" in library work
+Module <shiftRow> compiled
+Compiling verilog file "inv_mult.v" in library work
+Module <mult> compiled
+Compiling verilog file "invsubbyte.v" in library work
+Module <inv_mult> compiled
+Compiling verilog file "invshiftRow.v" in library work
+Module <invsubbyte> compiled
+Compiling verilog file "subbyteShiftRow.v" in library work
+Module <invshiftRow> compiled
+Compiling verilog file "row2col.v" in library work
+Module <subbyteShiftRow> compiled
+Compiling verilog file "mixcolum.v" in library work
+Module <row2column> compiled
+Compiling verilog file "keyexpansion_new.v" in library work
+Module <mixcolum> compiled
+Compiling verilog file "inv_mixcolum.v" in library work
+Module <keyexpansion_new> compiled
+Compiling verilog file "inv_keyexpansion.v" in library work
+Module <inv_mixcolum> compiled
+Compiling verilog file "invsubbyteShiftRow.v" in library work
+Module <inv_keyexpansion> compiled
+Compiling verilog file "hex_ascii.v" in library work
+Module <invsubbyteShiftRow> compiled
+Compiling verilog file "ps2_rx.v" in library work
+Module <hex_ascii> compiled
+Compiling verilog file "mem_io.v" in library work
+Module <ps2_rx> compiled
+Compiling verilog file "main_aes.v" in library work
+Module <mem_io> compiled
+Compiling verilog file "inv_AES.v" in library work
+Module <main_aes> compiled
+Compiling verilog file "final.v" in library work
+Module <inv_AES> compiled
+Module <final> compiled
+No errors in compilation
+Analysis of file <"final.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <final> in library <work>.
+
+Analyzing hierarchy for module <mem_io> in library <work>.
+
+Analyzing hierarchy for module <main_aes> in library <work>.
+
+Analyzing hierarchy for module <ps2_rx> in library <work> with parameters.
+	dps = "01"
+	idle = "00"
+	load = "10"
+
+Analyzing hierarchy for module <inv_AES> in library <work>.
+
+Analyzing hierarchy for module <hex_ascii> in library <work>.
+
+Analyzing hierarchy for module <row2column> in library <work>.
+
+Analyzing hierarchy for module <keyexpansion_new> in library <work>.
+
+Analyzing hierarchy for module <subbyteShiftRow> in library <work>.
+
+Analyzing hierarchy for module <mixcolum> in library <work> with parameters.
+	enb1 = "10"
+	enb10 = "01"
+	enb11 = "10"
+	enb12 = "11"
+	enb13 = "11"
+	enb14 = "01"
+	enb15 = "01"
+	enb16 = "10"
+	enb2 = "11"
+	enb3 = "01"
+	enb4 = "01"
+	enb5 = "01"
+	enb6 = "10"
+	enb7 = "11"
+	enb8 = "01"
+	enb9 = "01"
+
+Analyzing hierarchy for module <inv_keyexpansion> in library <work>.
+
+Analyzing hierarchy for module <invsubbyteShiftRow> in library <work>.
+
+Analyzing hierarchy for module <inv_mixcolum> in library <work> with parameters.
+	enb1 = "11"
+	enb10 = "10"
+	enb11 = "11"
+	enb12 = "00"
+	enb13 = "00"
+	enb14 = "01"
+	enb15 = "10"
+	enb16 = "11"
+	enb2 = "00"
+	enb3 = "01"
+	enb4 = "10"
+	enb5 = "10"
+	enb6 = "11"
+	enb7 = "00"
+	enb8 = "01"
+	enb9 = "01"
+
+Analyzing hierarchy for module <subbyte> in library <work>.
+
+Analyzing hierarchy for module <shiftRow> in library <work>.
+
+Analyzing hierarchy for module <mult> in library <work>.
+
+Analyzing hierarchy for module <invsubbyte> in library <work>.
+
+Analyzing hierarchy for module <invshiftRow> in library <work>.
+
+Analyzing hierarchy for module <inv_mult> in library <work>.
+
+Analyzing hierarchy for module <xtime> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <final>.
+Module <final> is correct for synthesis.
+ 
+Analyzing module <mem_io> in library <work>.
+WARNING:Xst:2319 - "mem_io.v" line 53: Signal mem in initial block is partially initialized. The initialization will be ignored.
+WARNING:Xst:1467 - "mem_io.v" line 102: Reset or set value is not constant in <count2>. It could involve simulation mismatches
+Module <mem_io> is correct for synthesis.
+ 
+Analyzing module <hex_ascii> in library <work>.
+Module <hex_ascii> is correct for synthesis.
+ 
+Analyzing module <main_aes> in library <work>.
+Module <main_aes> is correct for synthesis.
+ 
+Analyzing module <row2column> in library <work>.
+Module <row2column> is correct for synthesis.
+ 
+Analyzing module <keyexpansion_new> in library <work>.
+Module <keyexpansion_new> is correct for synthesis.
+ 
+Analyzing module <subbyte> in library <work>.
+Module <subbyte> is correct for synthesis.
+ 
+Analyzing module <subbyteShiftRow> in library <work>.
+Module <subbyteShiftRow> is correct for synthesis.
+ 
+Analyzing module <shiftRow> in library <work>.
+Module <shiftRow> is correct for synthesis.
+ 
+Analyzing module <mixcolum> in library <work>.
+	enb1 = 2'b10
+	enb10 = 2'b01
+	enb11 = 2'b10
+	enb12 = 2'b11
+	enb13 = 2'b11
+	enb14 = 2'b01
+	enb15 = 2'b01
+	enb16 = 2'b10
+	enb2 = 2'b11
+	enb3 = 2'b01
+	enb4 = 2'b01
+	enb5 = 2'b01
+	enb6 = 2'b10
+	enb7 = 2'b11
+	enb8 = 2'b01
+	enb9 = 2'b01
+Module <mixcolum> is correct for synthesis.
+ 
+Analyzing module <mult> in library <work>.
+Module <mult> is correct for synthesis.
+ 
+Analyzing module <xtime> in library <work>.
+Module <xtime> is correct for synthesis.
+ 
+Analyzing module <ps2_rx> in library <work>.
+	dps = 2'b01
+	idle = 2'b00
+	load = 2'b10
+Module <ps2_rx> is correct for synthesis.
+ 
+Analyzing module <inv_AES> in library <work>.
+Module <inv_AES> is correct for synthesis.
+ 
+Analyzing module <inv_keyexpansion> in library <work>.
+Module <inv_keyexpansion> is correct for synthesis.
+ 
+Analyzing module <invsubbyteShiftRow> in library <work>.
+Module <invsubbyteShiftRow> is correct for synthesis.
+ 
+Analyzing module <invsubbyte> in library <work>.
+Module <invsubbyte> is correct for synthesis.
+ 
+Analyzing module <invshiftRow> in library <work>.
+Module <invshiftRow> is correct for synthesis.
+ 
+Analyzing module <inv_mixcolum> in library <work>.
+	enb1 = 2'b11
+	enb10 = 2'b10
+	enb11 = 2'b11
+	enb12 = 2'b00
+	enb13 = 2'b00
+	enb14 = 2'b01
+	enb15 = 2'b10
+	enb16 = 2'b11
+	enb2 = 2'b00
+	enb3 = 2'b01
+	enb4 = 2'b10
+	enb5 = 2'b10
+	enb6 = 2'b11
+	enb7 = 2'b00
+	enb8 = 2'b01
+	enb9 = 2'b01
+Module <inv_mixcolum> is correct for synthesis.
+ 
+Analyzing module <inv_mult> in library <work>.
+Module <inv_mult> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+INFO:Xst:2679 - Register <key_in> in unit <mem_io> has a constant value of 00101011011111100001010100010110001010001010111011010010101001101010101111110111000101011000100000001001110011110100111100111100 during circuit operation. The register is replaced by logic.
+
+Synthesizing Unit <ps2_rx>.
+    Related source file is "ps2_rx.v".
+WARNING:Xst:1780 - Signal <flag> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+    Found finite state machine <FSM_0> for signal <state_reg>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 6                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 3                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | reset                     (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 11-bit register for signal <b_reg>.
+    Found 1-bit register for signal <f_ps2c_reg>.
+    Found 8-bit register for signal <filter_reg>.
+    Found 4-bit subtractor for signal <n_next$addsub0000> created at line 108.
+    Found 4-bit register for signal <n_reg>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  24 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <ps2_rx> synthesized.
+
+
+Synthesizing Unit <hex_ascii>.
+    Related source file is "hex_ascii.v".
+    Found 16x8-bit ROM for signal <out>.
+    Summary:
+	inferred   1 ROM(s).
+Unit <hex_ascii> synthesized.
+
+
+Synthesizing Unit <row2column>.
+    Related source file is "row2col.v".
+Unit <row2column> synthesized.
+
+
+Synthesizing Unit <subbyte>.
+    Related source file is "subbyte.v".
+    Found 256x8-bit ROM for signal <out>.
+    Summary:
+	inferred   1 ROM(s).
+Unit <subbyte> synthesized.
+
+
+Synthesizing Unit <shiftRow>.
+    Related source file is "shiftRow.v".
+Unit <shiftRow> synthesized.
+
+
+Synthesizing Unit <xtime>.
+    Related source file is "xtime.v".
+    Found 2-bit xor2 for signal <out<4:3>>.
+    Found 1-bit xor2 for signal <out<1>>.
+Unit <xtime> synthesized.
+
+
+Synthesizing Unit <invsubbyte>.
+    Related source file is "invsubbyte.v".
+    Found 256x8-bit ROM for signal <out>.
+    Summary:
+	inferred   1 ROM(s).
+Unit <invsubbyte> synthesized.
+
+
+Synthesizing Unit <invshiftRow>.
+    Related source file is "invshiftRow.v".
+Unit <invshiftRow> synthesized.
+
+
+Synthesizing Unit <mem_io>.
+    Related source file is "mem_io.v".
+WARNING:Xst:647 - Input <key_out> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:646 - Signal <x_enb> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <mem<5>> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.
+WARNING:Xst:2475 - Clock and clock enable of counter <count2> are driven by the same logic. The clock enable is removed.
+    Found 128-bit register for signal <data_in2>.
+    Found 3-bit up counter for signal <count1>.
+    Found 5-bit up counter for signal <count2>.
+    Found 1-bit register for signal <a>.
+    Found 1-bit register for signal <b>.
+    Found 1-bit register for signal <c>.
+    Found 1-bit register for signal <d>.
+    Found 1-bit register for signal <e>.
+    Found 128-bit register for signal <data_in>.
+    Found 1-bit register for signal <r_w>.
+    Found 1-bit register for signal <rs>.
+    Found 128-bit register for signal <key_in2>.
+    Found 6-bit register for signal <code>.
+    Found 3-bit up counter for signal <count>.
+    Found 5-bit subtractor for signal <count2$sub0000> created at line 104.
+    Found 3-bit up counter for signal <count_inv>.
+    Found 28-bit up counter for signal <lcd_count>.
+    Found 256-bit register for signal <mem<3:4>>.
+    Found 256-bit register for signal <mem<6:7>>.
+    Found 128-bit 8-to-1 multiplexer for signal <mem1>.
+    Found 1-bit register for signal <refresh>.
+    Found 1-bit register for signal <tick>.
+INFO:Xst:738 - HDL ADVISOR - 896 flip-flops were inferred for signal <mem>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+    Summary:
+	inferred   5 Counter(s).
+	inferred 1295 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred 128 Multiplexer(s).
+Unit <mem_io> synthesized.
+
+
+Synthesizing Unit <keyexpansion_new>.
+    Related source file is "keyexpansion_new.v".
+    Found 1-bit register for signal <x>.
+    Found 6-bit up counter for signal <count>.
+    Found 128-bit register for signal <out0>.
+    Found 1-bit xor2 for signal <out0_0$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_1$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_10$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_100$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out0_101$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out0_102$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out0_103$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out0_104$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out0_105$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out0_106$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out0_107$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out0_108$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out0_109$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out0_11$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_110$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out0_111$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out0_112$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out0_113$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out0_114$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out0_115$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out0_116$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out0_117$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out0_118$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out0_119$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out0_12$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_120$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out0_121$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out0_122$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out0_123$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out0_124$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out0_125$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out0_126$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out0_127$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out0_13$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_14$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_15$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_16$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_17$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_18$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_19$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_2$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_20$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_21$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_22$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_23$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_24$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_25$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_26$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_27$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_28$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_29$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_3$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_30$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_31$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_32$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_33$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_34$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_35$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_36$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_37$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_38$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_39$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_4$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_40$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_41$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_42$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_43$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_44$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_45$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_46$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_47$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_48$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_49$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_5$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_50$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_51$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_52$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_53$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_54$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_55$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_56$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_57$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_58$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_59$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_6$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_60$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_61$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_62$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_63$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_64$xor0000> created at line 99.
+    Found 1-bit xor2 for signal <out0_65$xor0000> created at line 99.
+    Found 1-bit xor2 for signal <out0_66$xor0000> created at line 99.
+    Found 1-bit xor2 for signal <out0_67$xor0000> created at line 99.
+    Found 1-bit xor2 for signal <out0_68$xor0000> created at line 99.
+    Found 1-bit xor2 for signal <out0_69$xor0000> created at line 99.
+    Found 1-bit xor2 for signal <out0_7$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_70$xor0000> created at line 99.
+    Found 1-bit xor2 for signal <out0_71$xor0000> created at line 99.
+    Found 1-bit xor2 for signal <out0_72$xor0000> created at line 99.
+    Found 1-bit xor2 for signal <out0_73$xor0000> created at line 99.
+    Found 1-bit xor2 for signal <out0_74$xor0000> created at line 99.
+    Found 1-bit xor2 for signal <out0_75$xor0000> created at line 99.
+    Found 1-bit xor2 for signal <out0_76$xor0000> created at line 99.
+    Found 1-bit xor2 for signal <out0_77$xor0000> created at line 99.
+    Found 1-bit xor2 for signal <out0_78$xor0000> created at line 99.
+    Found 1-bit xor2 for signal <out0_79$xor0000> created at line 99.
+    Found 1-bit xor2 for signal <out0_8$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_80$xor0000> created at line 99.
+    Found 1-bit xor2 for signal <out0_81$xor0000> created at line 99.
+    Found 1-bit xor2 for signal <out0_82$xor0000> created at line 99.
+    Found 1-bit xor2 for signal <out0_83$xor0000> created at line 99.
+    Found 1-bit xor2 for signal <out0_84$xor0000> created at line 99.
+    Found 1-bit xor2 for signal <out0_85$xor0000> created at line 99.
+    Found 1-bit xor2 for signal <out0_86$xor0000> created at line 99.
+    Found 1-bit xor2 for signal <out0_87$xor0000> created at line 99.
+    Found 1-bit xor2 for signal <out0_88$xor0000> created at line 99.
+    Found 1-bit xor2 for signal <out0_89$xor0000> created at line 99.
+    Found 1-bit xor2 for signal <out0_9$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_90$xor0000> created at line 99.
+    Found 1-bit xor2 for signal <out0_91$xor0000> created at line 99.
+    Found 1-bit xor2 for signal <out0_92$xor0000> created at line 99.
+    Found 1-bit xor2 for signal <out0_93$xor0000> created at line 99.
+    Found 1-bit xor2 for signal <out0_94$xor0000> created at line 99.
+    Found 1-bit xor2 for signal <out0_95$xor0000> created at line 99.
+    Found 1-bit xor2 for signal <out0_96$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out0_97$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out0_98$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out0_99$xor0000> created at line 98.
+    Found 128-bit register for signal <out1>.
+    Found 1-bit xor2 for signal <out1_0$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_1$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_10$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_100$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out1_101$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out1_102$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out1_103$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out1_104$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out1_105$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out1_106$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out1_107$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out1_108$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out1_109$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out1_11$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_110$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out1_111$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out1_112$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out1_113$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out1_114$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out1_115$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out1_116$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out1_117$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out1_118$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out1_119$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out1_12$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_120$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out1_121$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out1_122$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out1_123$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out1_124$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out1_125$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out1_126$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out1_127$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out1_13$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_14$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_15$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_16$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_17$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_18$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_19$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_2$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_20$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_21$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_22$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_23$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_24$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_25$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_26$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_27$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_28$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_29$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_3$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_30$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_31$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_32$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_33$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_34$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_35$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_36$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_37$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_38$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_39$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_4$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_40$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_41$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_42$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_43$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_44$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_45$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_46$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_47$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_48$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_49$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_5$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_50$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_51$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_52$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_53$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_54$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_55$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_56$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_57$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_58$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_59$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_6$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_60$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_61$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_62$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_63$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_64$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out1_65$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out1_66$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out1_67$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out1_68$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out1_69$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out1_7$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_70$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out1_71$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out1_72$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out1_73$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out1_74$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out1_75$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out1_76$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out1_77$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out1_78$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out1_79$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out1_8$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_80$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out1_81$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out1_82$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out1_83$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out1_84$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out1_85$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out1_86$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out1_87$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out1_88$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out1_89$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out1_9$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_90$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out1_91$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out1_92$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out1_93$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out1_94$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out1_95$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out1_96$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out1_97$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out1_98$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out1_99$xor0000> created at line 93.
+    Summary:
+	inferred   1 Counter(s).
+	inferred 257 D-type flip-flop(s).
+Unit <keyexpansion_new> synthesized.
+
+
+Synthesizing Unit <subbyteShiftRow>.
+    Related source file is "subbyteShiftRow.v".
+Unit <subbyteShiftRow> synthesized.
+
+
+Synthesizing Unit <mult>.
+    Related source file is "mult.v".
+    Found 8-bit 4-to-1 multiplexer for signal <out>.
+    Found 8-bit xor2 for signal <out$xor0000> created at line 35.
+    Summary:
+	inferred   8 Multiplexer(s).
+Unit <mult> synthesized.
+
+
+Synthesizing Unit <inv_keyexpansion>.
+    Related source file is "inv_keyexpansion.v".
+    Found 1-bit register for signal <x>.
+    Found 6-bit up counter for signal <count>.
+    Found 128-bit register for signal <out0>.
+    Found 1-bit xor2 for signal <out0_0$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_1$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_10$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_100$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_101$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_102$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_103$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_104$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_105$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_106$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_107$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_108$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_109$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_11$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_110$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_111$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_112$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_113$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_114$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_115$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_116$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_117$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_118$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_119$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_12$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_120$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_121$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_122$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_123$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_124$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_125$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_126$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_127$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_13$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_14$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_15$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_16$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_17$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_18$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_19$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_2$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_20$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_21$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_22$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_23$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_24$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_25$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_26$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_27$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_28$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_29$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_3$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_30$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_31$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_32$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_33$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_34$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_35$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_36$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_37$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_38$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_39$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_4$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_40$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_41$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_42$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_43$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_44$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_45$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_46$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_47$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_48$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_49$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_5$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_50$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_51$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_52$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_53$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_54$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_55$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_56$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_57$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_58$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_59$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_6$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_60$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_61$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_62$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_63$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_64$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_65$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_66$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_67$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_68$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_69$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_7$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_70$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_71$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_72$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_73$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_74$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_75$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_76$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_77$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_78$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_79$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_8$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_80$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_81$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_82$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_83$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_84$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_85$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_86$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_87$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_88$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_89$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_9$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_90$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_91$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_92$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_93$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_94$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_95$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_96$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_97$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_98$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_99$xor0000> created at line 103.
+    Found 128-bit register for signal <out1>.
+    Found 1-bit xor2 for signal <out1_0$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_1$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_10$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_100$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_101$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_102$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_103$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_104$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_105$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_106$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_107$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_108$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_109$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_11$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_110$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_111$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_112$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_113$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_114$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_115$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_116$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_117$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_118$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_119$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_12$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_120$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_121$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_122$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_123$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_124$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_125$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_126$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_127$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_13$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_14$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_15$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_16$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_17$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_18$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_19$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_2$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_20$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_21$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_22$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_23$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_24$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_25$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_26$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_27$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_28$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_29$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_3$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_30$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_31$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_32$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_33$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_34$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_35$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_36$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_37$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_38$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_39$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_4$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_40$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_41$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_42$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_43$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_44$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_45$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_46$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_47$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_48$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_49$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_5$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_50$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_51$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_52$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_53$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_54$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_55$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_56$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_57$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_58$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_59$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_6$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_60$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_61$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_62$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_63$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_64$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_65$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_66$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_67$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_68$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_69$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_7$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_70$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_71$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_72$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_73$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_74$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_75$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_76$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_77$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_78$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_79$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_8$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_80$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_81$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_82$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_83$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_84$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_85$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_86$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_87$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_88$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_89$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_9$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_90$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_91$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_92$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_93$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_94$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_95$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_96$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_97$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_98$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_99$xor0000> created at line 98.
+    Summary:
+	inferred   1 Counter(s).
+	inferred 257 D-type flip-flop(s).
+Unit <inv_keyexpansion> synthesized.
+
+
+Synthesizing Unit <invsubbyteShiftRow>.
+    Related source file is "invsubbyteShiftRow.v".
+Unit <invsubbyteShiftRow> synthesized.
+
+
+Synthesizing Unit <inv_mult>.
+    Related source file is "inv_mult.v".
+    Found 8-bit 4-to-1 multiplexer for signal <out>.
+    Found 8-bit xor2 for signal <out$xor0000> created at line 37.
+    Found 8-bit xor2 for signal <out$xor0001> created at line 36.
+    Found 8-bit xor2 for signal <out$xor0002> created at line 35.
+    Found 8-bit xor2 for signal <out$xor0003> created at line 34.
+    Found 8-bit xor2 for signal <out$xor0004> created at line 37.
+    Summary:
+	inferred   8 Multiplexer(s).
+Unit <inv_mult> synthesized.
+
+
+Synthesizing Unit <mixcolum>.
+    Related source file is "mixcolum.v".
+    Found 32-bit xor4 for signal <out>.
+    Summary:
+	inferred  32 Xor(s).
+Unit <mixcolum> synthesized.
+
+
+Synthesizing Unit <inv_mixcolum>.
+    Related source file is "inv_mixcolum.v".
+    Found 32-bit xor4 for signal <out>.
+    Summary:
+	inferred  32 Xor(s).
+Unit <inv_mixcolum> synthesized.
+
+
+Synthesizing Unit <main_aes>.
+    Related source file is "main_aes.v".
+    Found 128-bit register for signal <data_out>.
+    Found 2-bit register for signal <rw>.
+    Found 5-bit register for signal <count>.
+    Found 5-bit adder for signal <count$addsub0000> created at line 85.
+    Found 128-bit register for signal <reg1>.
+    Found 128-bit xor2 for signal <reg1$xor0000> created at line 104.
+    Found 128-bit xor2 for signal <reg1$xor0001> created at line 113.
+    Found 128-bit xor2 for signal <reg1$xor0002> created at line 121.
+    Found 128-bit register for signal <reg2>.
+    Found 1-bit register for signal <tick>.
+    Summary:
+	inferred 390 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <main_aes> synthesized.
+
+
+Synthesizing Unit <inv_AES>.
+    Related source file is "inv_AES.v".
+    Found 2-bit register for signal <rw>.
+    Found 5-bit register for signal <count>.
+    Found 5-bit adder for signal <count$addsub0000> created at line 84.
+    Found 128-bit register for signal <data>.
+    Found 128-bit register for signal <reg1>.
+    Found 128-bit register for signal <reg2>.
+    Found 128-bit xor2 for signal <temp3$xor0000> created at line 92.
+    Found 128-bit xor2 for signal <temp3$xor0001> created at line 92.
+    Found 1-bit register for signal <tick>.
+    Summary:
+	inferred 390 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <inv_AES> synthesized.
+
+
+Synthesizing Unit <final>.
+    Related source file is "final.v".
+WARNING:Xst:646 - Signal <key_in2> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+Unit <final> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 80
+ 16x8-bit ROM                                          : 32
+ 256x8-bit ROM                                         : 48
+# Adders/Subtractors                                   : 4
+ 4-bit subtractor                                      : 1
+ 5-bit adder                                           : 2
+ 5-bit subtractor                                      : 1
+# Counters                                             : 7
+ 28-bit up counter                                     : 1
+ 3-bit up counter                                      : 3
+ 5-bit up counter                                      : 1
+ 6-bit up counter                                      : 2
+# Registers                                            : 931
+ 1-bit register                                        : 910
+ 11-bit register                                       : 1
+ 128-bit register                                      : 13
+ 2-bit register                                        : 2
+ 4-bit register                                        : 1
+ 5-bit register                                        : 2
+ 6-bit register                                        : 1
+ 8-bit register                                        : 1
+# Multiplexers                                         : 129
+ 128-bit 8-to-1 multiplexer                            : 1
+ 8-bit 4-to-1 multiplexer                              : 128
+# Xors                                                 : 1925
+ 1-bit xor2                                            : 1280
+ 1-bit xor4                                            : 256
+ 128-bit xor2                                          : 5
+ 8-bit xor2                                            : 384
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <a3/state_reg/FSM> on signal <state_reg[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 11
+-------------------
+WARNING:Xst:1710 - FF/Latch <data_in_92> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_90> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_89> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_88> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_87> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_85> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_82> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_80> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_79> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_78> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_75> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_74> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_73> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_72> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_70> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_69> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_68> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_65> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_127> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_126> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_123> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_122> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_120> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_119> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_117> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_116> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_115> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_114> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_107> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_104> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_102> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_100> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_98> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_97> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_96> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_94> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_93> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_32> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_28> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_27> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_26> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_25> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_24> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_23> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_22> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_19> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_15> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_14> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_13> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_12> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_11> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_7> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_6> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_3> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_1> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_63> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_62> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_59> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_58> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_57> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_55> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_54> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_51> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_50> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_49> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_46> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_45> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_42> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_41> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_40> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_38> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_36> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_35> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_34> (without init value) has a constant value of 0 in block <a1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <b_reg_0> of sequential type is unconnected in block <a3>.
+WARNING:Xst:2404 -  FFs/Latches <key_in2<127:0>> (without init value) have a constant value of 0 in block <mem_io>.
+
+Synthesizing (advanced) Unit <inv_AES>.
+INFO:Xst:3044 - The ROM <SR1/s1/Mrom_out> will be implemented as a read-only BLOCK RAM, absorbing the register: <reg1>.
+INFO:Xst:3044 - The ROM <SR1/s0/Mrom_out> will be implemented as a read-only BLOCK RAM, absorbing the register: <reg1>.
+INFO:Xst:3044 - The ROM <SR1/s2/Mrom_out> will be implemented as a read-only BLOCK RAM, absorbing the register: <reg1>.
+INFO:Xst:3044 - The ROM <SR1/s3/Mrom_out> will be implemented as a read-only BLOCK RAM, absorbing the register: <reg1>.
+INFO:Xst:3044 - The ROM <SR1/s4/Mrom_out> will be implemented as a read-only BLOCK RAM, absorbing the register: <reg1>.
+INFO:Xst:3044 - The ROM <SR1/s5/Mrom_out> will be implemented as a read-only BLOCK RAM, absorbing the register: <reg1>.
+INFO:Xst:3044 - The ROM <SR1/s6/Mrom_out> will be implemented as a read-only BLOCK RAM, absorbing the register: <reg1>.
+INFO:Xst:3044 - The ROM <SR1/s7/Mrom_out> will be implemented as a read-only BLOCK RAM, absorbing the register: <reg1>.
+INFO:Xst:3044 - The ROM <SR1/s8/Mrom_out> will be implemented as a read-only BLOCK RAM, absorbing the register: <reg1>.
+INFO:Xst:3044 - The ROM <SR1/s9/Mrom_out> will be implemented as a read-only BLOCK RAM, absorbing the register: <reg1>.
+INFO:Xst:3044 - The ROM <SR1/s10/Mrom_out> will be implemented as a read-only BLOCK RAM, absorbing the register: <reg1>.
+INFO:Xst:3044 - The ROM <SR1/s11/Mrom_out> will be implemented as a read-only BLOCK RAM, absorbing the register: <reg1>.
+INFO:Xst:3044 - The ROM <SR1/s12/Mrom_out> will be implemented as a read-only BLOCK RAM, absorbing the register: <reg1>.
+INFO:Xst:3044 - The ROM <SR1/s13/Mrom_out> will be implemented as a read-only BLOCK RAM, absorbing the register: <reg1>.
+INFO:Xst:3044 - The ROM <SR1/s14/Mrom_out> will be implemented as a read-only BLOCK RAM, absorbing the register: <reg1>.
+INFO:Xst:3044 - The ROM <SR1/s15/Mrom_out> will be implemented as a read-only BLOCK RAM, absorbing the register: <reg1>.
+INFO:Xst:3225 - The RAM <SR1/s1/Mrom_out> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <tick>          | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to internal node          |          |
+    |     doA            | connected to signal <SR1/temp>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <SR1/s0/Mrom_out> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <tick>          | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to internal node          |          |
+    |     doA            | connected to signal <SR1/temp>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <SR1/s2/Mrom_out> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <tick>          | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to internal node          |          |
+    |     doA            | connected to signal <SR1/temp>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <SR1/s3/Mrom_out> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <tick>          | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to internal node          |          |
+    |     doA            | connected to signal <SR1/temp>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <SR1/s4/Mrom_out> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <tick>          | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to internal node          |          |
+    |     doA            | connected to signal <SR1/temp>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <SR1/s5/Mrom_out> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <tick>          | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to internal node          |          |
+    |     doA            | connected to signal <SR1/temp>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <SR1/s6/Mrom_out> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <tick>          | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to internal node          |          |
+    |     doA            | connected to signal <SR1/temp>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <SR1/s7/Mrom_out> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <tick>          | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to internal node          |          |
+    |     doA            | connected to signal <SR1/temp>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <SR1/s8/Mrom_out> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <tick>          | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to internal node          |          |
+    |     doA            | connected to signal <SR1/temp>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <SR1/s9/Mrom_out> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <tick>          | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to internal node          |          |
+    |     doA            | connected to signal <SR1/temp>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <SR1/s10/Mrom_out> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <tick>          | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to internal node          |          |
+    |     doA            | connected to signal <SR1/temp>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <SR1/s11/Mrom_out> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <tick>          | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to internal node          |          |
+    |     doA            | connected to signal <SR1/temp>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <SR1/s12/Mrom_out> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <tick>          | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to internal node          |          |
+    |     doA            | connected to signal <SR1/temp>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <SR1/s13/Mrom_out> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <tick>          | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to internal node          |          |
+    |     doA            | connected to signal <SR1/temp>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <SR1/s14/Mrom_out> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <tick>          | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to internal node          |          |
+    |     doA            | connected to signal <SR1/temp>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <SR1/s15/Mrom_out> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <tick>          | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to internal node          |          |
+    |     doA            | connected to signal <SR1/temp>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <inv_AES> synthesized (advanced).
+
+Synthesizing (advanced) Unit <main_aes>.
+INFO:Xst:3044 - The ROM <SR1/s1/Mrom_out> will be implemented as a read-only BLOCK RAM, absorbing the register: <reg1>.
+INFO:Xst:3044 - The ROM <SR1/s0/Mrom_out> will be implemented as a read-only BLOCK RAM, absorbing the register: <reg1>.
+INFO:Xst:3044 - The ROM <SR1/s2/Mrom_out> will be implemented as a read-only BLOCK RAM, absorbing the register: <reg1>.
+INFO:Xst:3044 - The ROM <SR1/s3/Mrom_out> will be implemented as a read-only BLOCK RAM, absorbing the register: <reg1>.
+INFO:Xst:3045 - The ROM description <SR1/s4/Mrom_out> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
+INFO:Xst:3045 - The ROM description <SR1/s5/Mrom_out> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
+INFO:Xst:3045 - The ROM description <SR1/s6/Mrom_out> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
+INFO:Xst:3045 - The ROM description <SR1/s7/Mrom_out> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
+INFO:Xst:3045 - The ROM description <SR1/s8/Mrom_out> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
+INFO:Xst:3045 - The ROM description <SR1/s9/Mrom_out> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
+INFO:Xst:3045 - The ROM description <SR1/s10/Mrom_out> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
+INFO:Xst:3045 - The ROM description <SR1/s11/Mrom_out> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
+INFO:Xst:3045 - The ROM description <SR1/s12/Mrom_out> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
+INFO:Xst:3045 - The ROM description <SR1/s13/Mrom_out> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
+INFO:Xst:3045 - The ROM description <SR1/s14/Mrom_out> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
+INFO:Xst:3045 - The ROM description <SR1/s15/Mrom_out> will be implemented on LUTs because the limited number of device block RAMs. If you want to be implemented as block RAM, please select a larger device.
+INFO:Xst:3225 - The RAM <SR1/s1/Mrom_out> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <tick>          | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to internal node          |          |
+    |     doA            | connected to signal <SR1/temp>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <SR1/s0/Mrom_out> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <tick>          | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to internal node          |          |
+    |     doA            | connected to signal <SR1/temp>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <SR1/s2/Mrom_out> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <tick>          | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to internal node          |          |
+    |     doA            | connected to signal <SR1/temp>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <SR1/s3/Mrom_out> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <tick>          | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to internal node          |          |
+    |     doA            | connected to signal <SR1/temp>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <main_aes> synthesized (advanced).
+WARNING:Xst:2677 - Node <b_reg_0> of sequential type is unconnected in block <ps2_rx>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 20
+ 256x8-bit single-port block RAM                       : 20
+# ROMs                                                 : 60
+ 16x8-bit ROM                                          : 32
+ 256x8-bit ROM                                         : 28
+# Adders/Subtractors                                   : 4
+ 4-bit subtractor                                      : 1
+ 5-bit adder                                           : 2
+ 5-bit subtractor                                      : 1
+# Counters                                             : 7
+ 28-bit up counter                                     : 1
+ 3-bit up counter                                      : 3
+ 5-bit up counter                                      : 1
+ 6-bit up counter                                      : 2
+# Registers                                            : 2490
+ Flip-Flops                                            : 2490
+# Multiplexers                                         : 256
+ 1-bit 8-to-1 multiplexer                              : 128
+ 8-bit 4-to-1 multiplexer                              : 128
+# Xors                                                 : 1925
+ 1-bit xor2                                            : 1280
+ 1-bit xor4                                            : 256
+ 128-bit xor2                                          : 5
+ 8-bit xor2                                            : 384
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1989 - Unit <mixcolum>: instances <m3>, <m15> of unit <mult> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <mixcolum>: instances <m4>, <m8> of unit <mult> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <mixcolum>: instances <m5>, <m9> of unit <mult> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <mixcolum>: instances <m10>, <m14> of unit <mult> are equivalent, second instance is removed
+WARNING:Xst:1710 - FF/Latch <data_in_92> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_90> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_89> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_88> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_87> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_85> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_82> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_80> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_79> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_78> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_75> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_74> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_73> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_72> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_70> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_69> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_68> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_65> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_127> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_126> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_123> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_122> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_120> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_119> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_117> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_116> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_115> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_114> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_107> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_104> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_102> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_100> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_98> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_97> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_96> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_94> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_93> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_32> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_28> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_27> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_26> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_25> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_24> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_23> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_22> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_19> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_15> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_14> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_13> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_12> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_11> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_7> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_6> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_3> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_1> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_63> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_62> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_59> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_58> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_57> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_55> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_54> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_51> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_50> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_49> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_46> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_45> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_42> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_41> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_40> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_38> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_36> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_35> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_34> (without init value) has a constant value of 0 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2697 - Unit <main_aes> : the RAMs <SR1/s1/Mrom_out>, <SR1/s3/Mrom_out> are packed into the single block RAM <SR1/s1/Mrom_out1>
+INFO:Xst:2697 - Unit <main_aes> : the RAMs <SR1/s0/Mrom_out>, <SR1/s2/Mrom_out> are packed into the single block RAM <SR1/s0/Mrom_out1>
+INFO:Xst:2697 - Unit <inv_AES> : the RAMs <SR1/s1/Mrom_out>, <SR1/s3/Mrom_out> are packed into the single block RAM <SR1/s1/Mrom_out1>
+INFO:Xst:2697 - Unit <inv_AES> : the RAMs <SR1/s0/Mrom_out>, <SR1/s2/Mrom_out> are packed into the single block RAM <SR1/s0/Mrom_out1>
+INFO:Xst:2697 - Unit <inv_AES> : the RAMs <SR1/s6/Mrom_out>, <SR1/s4/Mrom_out> are packed into the single block RAM <SR1/s6/Mrom_out1>
+INFO:Xst:2697 - Unit <inv_AES> : the RAMs <SR1/s5/Mrom_out>, <SR1/s9/Mrom_out> are packed into the single block RAM <SR1/s5/Mrom_out1>
+INFO:Xst:2697 - Unit <inv_AES> : the RAMs <SR1/s7/Mrom_out>, <SR1/s8/Mrom_out> are packed into the single block RAM <SR1/s7/Mrom_out1>
+INFO:Xst:2697 - Unit <inv_AES> : the RAMs <SR1/s12/Mrom_out>, <SR1/s10/Mrom_out> are packed into the single block RAM <SR1/s12/Mrom_out1>
+INFO:Xst:2697 - Unit <inv_AES> : the RAMs <SR1/s11/Mrom_out>, <SR1/s15/Mrom_out> are packed into the single block RAM <SR1/s11/Mrom_out1>
+INFO:Xst:2697 - Unit <inv_AES> : the RAMs <SR1/s13/Mrom_out>, <SR1/s14/Mrom_out> are packed into the single block RAM <SR1/s13/Mrom_out1>
+
+Optimizing unit <final> ...
+
+Optimizing unit <ps2_rx> ...
+
+Optimizing unit <keyexpansion_new> ...
+
+Optimizing unit <inv_keyexpansion> ...
+
+Optimizing unit <mem_io> ...
+WARNING:Xst:1710 - FF/Latch <data_in_66> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_67> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_71> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_76> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_77> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_81> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_83> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_84> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_86> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_91> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_95> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_99> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_101> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_103> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_105> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_106> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_108> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_109> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_110> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_111> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_112> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_113> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_118> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_121> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_124> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_125> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_2> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_4> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_5> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_8> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_9> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_10> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_16> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_17> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_18> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_20> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_21> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_29> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_30> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_31> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_33> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_37> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_39> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_43> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_44> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_47> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_48> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_52> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_53> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_56> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_60> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_61> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_in_64> (without init value) has a constant value of 1 in block <mem_io>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <mixcolum> ...
+
+Optimizing unit <inv_mixcolum> ...
+
+Optimizing unit <main_aes> ...
+
+Optimizing unit <inv_AES> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+INFO:Xst:2261 - The FF/Latch <a2/k1/x> in Unit <final> is equivalent to the following FF/Latch, which will be removed : <a4/k1/x> 
+Found area constraint ratio of 100 (+ 5) on block final, actual ratio is 92.
+FlipFlop a1/count2_0 has been replicated 1 time(s)
+FlipFlop a1/count2_1 has been replicated 1 time(s)
+FlipFlop a1/count2_4 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+Processing Unit <final> :
+	Found 2-bit shift register for signal <a1/e>.
+Unit <final> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 2417
+ Flip-Flops                                            : 2417
+# Shift Registers                                      : 1
+ 2-bit shift register                                  : 1
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : final.ngr
+Top Level Output File Name         : final
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 25
+
+Cell Usage :
+# BELS                             : 11986
+#      GND                         : 1
+#      INV                         : 12
+#      LUT1                        : 27
+#      LUT2                        : 895
+#      LUT2_D                      : 20
+#      LUT2_L                      : 39
+#      LUT3                        : 837
+#      LUT3_D                      : 51
+#      LUT3_L                      : 81
+#      LUT4                        : 5568
+#      LUT4_D                      : 200
+#      LUT4_L                      : 409
+#      MUXCY                       : 27
+#      MUXF5                       : 2097
+#      MUXF6                       : 1024
+#      MUXF7                       : 448
+#      MUXF8                       : 221
+#      VCC                         : 1
+#      XORCY                       : 28
+# FlipFlops/Latches                : 2418
+#      FD                          : 601
+#      FD_1                        : 50
+#      FDC                         : 40
+#      FDC_1                       : 2
+#      FDCE                        : 20
+#      FDCP                        : 8
+#      FDE                         : 768
+#      FDE_1                       : 628
+#      FDP                         : 2
+#      FDR                         : 28
+#      FDS                         : 53
+#      FDS_1                       : 218
+# RAMS                             : 10
+#      RAMB16_S9_S9                : 10
+# Shift Registers                  : 1
+#      SRL16                       : 1
+# Clock Buffers                    : 6
+#      BUFG                        : 3
+#      BUFGP                       : 3
+# IO Buffers                       : 22
+#      IBUF                        : 6
+#      OBUF                        : 16
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                     4301  out of   4656    92%  
+ Number of Slice Flip Flops:           2418  out of   9312    25%  
+ Number of 4 input LUTs:               8140  out of   9312    87%  
+    Number used as logic:              8139
+    Number used as Shift registers:       1
+ Number of IOs:                          25
+ Number of bonded IOBs:                  25  out of    232    10%  
+ Number of BRAMs:                        10  out of     20    50%  
+ Number of GCLKs:                         6  out of     24    25%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 595   |
+clk1                               | BUFGP                  | 3     |
+a1/tick1                           | BUFG                   | 647   |
+clk2                               | BUFGP                  | 392   |
+a2/tick1                           | BUFG                   | 393   |
+a4/tick1                           | BUFG                   | 399   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+----------------------------------------------+------------------------+-------+
+Control Signal                                | Buffer(FF name)        | Load  |
+----------------------------------------------+------------------------+-------+
+reset                                         | IBUF                   | 64    |
+a1/count2_0__and0000(a1/count2_0__and00001:O) | NONE(a1/count2_0)      | 2     |
+a1/count2_0__or0000(a1/count2_0__or00001:O)   | NONE(a1/count2_0)      | 2     |
+a1/count2_1__and0000(a1/count2_1__and000011:O)| NONE(a1/count2_1)      | 2     |
+a1/count2_1__or0000(a1/count2_1__or000011:O)  | NONE(a1/count2_1)      | 2     |
+a1/count2_4__and0000(a1/count2_4__and00001:O) | NONE(a1/count2_4)      | 2     |
+a1/count2_4__or0000(a1/count2_4__or00001:O)   | NONE(a1/count2_4)      | 2     |
+a1/count2_2__and0000(a1/count2_2__and000011:O)| NONE(a1/count2_2)      | 1     |
+a1/count2_2__or0000(a1/count2_2__or00001_f5:O)| NONE(a1/count2_2)      | 1     |
+a1/count2_3__and0000(a1/count2_3__and00001:O) | NONE(a1/count2_3)      | 1     |
+a1/count2_3__or0000(a1/count2_3__or00001:O)   | NONE(a1/count2_3)      | 1     |
+----------------------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 10.382ns (Maximum Frequency: 96.321MHz)
+   Minimum input arrival time before clock: 6.503ns
+   Maximum output required time after clock: 5.273ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 7.842ns (frequency: 127.511MHz)
+  Total number of paths / destination ports: 19881 / 1069
+-------------------------------------------------------------------------
+Delay:               7.842ns (Levels of Logic = 4)
+  Source:            a2/k1/count_1 (FF)
+  Destination:       a2/k1/out0_120 (FF)
+  Source Clock:      clk falling
+  Destination Clock: clk falling
+
+  Data Path: a2/k1/count_1 to a2/k1/out0_120
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q           131   0.591   1.372  a2/k1/count_1 (a2/k1/count_1)
+     LUT3_D:I1->O          8   0.704   0.792  a2/k1/out0_127_cmp_eq000011 (a2/k1/N111)
+     LUT3_D:I2->O          5   0.704   0.668  a2/k1/out0_127_cmp_eq000111 (a2/k1/N264)
+     LUT4_D:I2->O         25   0.704   1.295  a2/k1/out0_126_or00001 (a2/k1/out0_126_or0000)
+     LUT3:I2->O            1   0.704   0.000  a2/k1/out0_120_mux00001 (a2/k1/out0_120_mux00001)
+     FDS_1:D                   0.308          a2/k1/out0_120
+    ----------------------------------------
+    Total                      7.842ns (3.715ns logic, 4.127ns route)
+                                       (47.4% logic, 52.6% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk1'
+  Clock period: 3.433ns (frequency: 291.290MHz)
+  Total number of paths / destination ports: 6 / 3
+-------------------------------------------------------------------------
+Delay:               3.433ns (Levels of Logic = 1)
+  Source:            a1/count1_0 (FF)
+  Destination:       a1/count1_0 (FF)
+  Source Clock:      clk1 rising
+  Destination Clock: clk1 rising
+
+  Data Path: a1/count1_0 to a1/count1_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q            549   0.591   1.410  a1/count1_0 (a1/count1_0)
+     INV:I->O              1   0.704   0.420  a1/Mcount_count1_xor<0>11_INV_0 (a1/Result<0>1)
+     FDC:D                     0.308          a1/count1_0
+    ----------------------------------------
+    Total                      3.433ns (1.603ns logic, 1.830ns route)
+                                       (46.7% logic, 53.3% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'a1/tick1'
+  Clock period: 9.735ns (frequency: 102.726MHz)
+  Total number of paths / destination ports: 2722 / 653
+-------------------------------------------------------------------------
+Delay:               4.867ns (Levels of Logic = 2)
+  Source:            a1/count_inv_0 (FF)
+  Destination:       a1/data_in2_99 (FF)
+  Source Clock:      a1/tick1 falling
+  Destination Clock: a1/tick1 rising
+
+  Data Path: a1/count_inv_0 to a1/data_in2_99
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q           140   0.591   1.471  a1/count_inv_0 (a1/count_inv_0)
+     LUT3_D:I0->O         19   0.704   1.089  a1/data_in2_mux0000<0>11_6 (a1/data_in2_mux0000<0>115)
+     LUT4:I3->O            1   0.704   0.000  a1/data_in2_mux0000<99> (a1/data_in2_mux0000<99>)
+     FD:D                      0.308          a1/data_in2_99
+    ----------------------------------------
+    Total                      4.867ns (2.307ns logic, 2.560ns route)
+                                       (47.4% logic, 52.6% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk2'
+  Clock period: 10.382ns (frequency: 96.321MHz)
+  Total number of paths / destination ports: 1957 / 392
+-------------------------------------------------------------------------
+Delay:               5.191ns (Levels of Logic = 2)
+  Source:            a1/count2_3 (FF)
+  Destination:       a1/mem<2>_0 (FF)
+  Source Clock:      clk2 rising
+  Destination Clock: clk2 falling
+
+  Data Path: a1/count2_3 to a1/mem<2>_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCP:C->Q            16   0.591   1.113  a1/count2_3 (a1/count2_3)
+     LUT3_D:I1->O         11   0.704   0.937  a1/not0038_and000011 (a1/N10)
+     LUT4:I3->O            4   0.704   0.587  a1/mem<1>_67_not00001 (a1/mem<1>_67_not0000)
+     FDE_1:CE                  0.555          a1/mem<1>_66
+    ----------------------------------------
+    Total                      5.191ns (2.554ns logic, 2.637ns route)
+                                       (49.2% logic, 50.8% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'a2/tick1'
+  Clock period: 7.494ns (frequency: 133.434MHz)
+  Total number of paths / destination ports: 11803 / 604
+-------------------------------------------------------------------------
+Delay:               7.494ns (Levels of Logic = 4)
+  Source:            a2/count_1 (FF)
+  Destination:       a2/count_3 (FF)
+  Source Clock:      a2/tick1 rising
+  Destination Clock: a2/tick1 rising
+
+  Data Path: a2/count_1 to a2/count_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q            264   0.591   1.510  a2/count_1 (a2/count_1)
+     LUT4:I0->O          129   0.704   1.468  a2/count_cmp_eq000111 (a2/data_out_or0000)
+     LUT4_D:I0->LO         1   0.704   0.179  a2/count_and00011 (N1839)
+     LUT2:I1->O            2   0.704   0.622  a2/count_or00001 (a2/count_or0000)
+     LUT4:I0->O            1   0.704   0.000  a2/count_mux0000<1>1 (a2/count_mux0000<1>)
+     FDC:D                     0.308          a2/count_3
+    ----------------------------------------
+    Total                      7.494ns (3.715ns logic, 3.779ns route)
+                                       (49.6% logic, 50.4% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'a4/tick1'
+  Clock period: 9.765ns (frequency: 102.409MHz)
+  Total number of paths / destination ports: 24438 / 647
+-------------------------------------------------------------------------
+Delay:               9.765ns (Levels of Logic = 5)
+  Source:            a4/count_3 (FF)
+  Destination:       a4/SR1/s11/Mrom_out1 (RAM)
+  Source Clock:      a4/tick1 rising
+  Destination Clock: a4/tick1 rising
+
+  Data Path: a4/count_3 to a4/SR1/s11/Mrom_out1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q            137   0.591   1.470  a4/count_3 (a4/count_3)
+     LUT4_D:I0->O        156   0.704   1.305  a4/temp3_or00001 (a4/temp3_or0000)
+     LUT4_D:I3->O         14   0.704   1.175  a4/temp3<39>1 (a4/temp3<39>)
+     LUT2_D:I0->O          1   0.704   0.424  a4/M4/m11/out_xor0004<1>1 (a4/M4/m11/out_xor0004<1>)
+     LUT4:I3->O            1   0.704   0.455  a4/reg1_mux0000<33>49 (a4/reg1_mux0000<33>49)
+     LUT4:I2->O            2   0.704   0.447  a4/reg1_mux0000<33>122 (a4/reg1_mux0000<33>)
+     RAMB16_S9_S9:ADDRA1        0.377          a4/SR1/s11/Mrom_out1
+    ----------------------------------------
+    Total                      9.765ns (4.488ns logic, 5.277ns route)
+                                       (46.0% logic, 54.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 42 / 42
+-------------------------------------------------------------------------
+Offset:              3.812ns (Levels of Logic = 2)
+  Source:            en_aes (PAD)
+  Destination:       a2/k1/count_0 (FF)
+  Destination Clock: clk falling
+
+  Data Path: en_aes to a2/k1/count_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   1.218   0.666  en_aes_IBUF (en_aes_IBUF)
+     LUT4:I1->O            6   0.704   0.669  a2/k1/count_not0001 (a2/k1/count_not0001)
+     FDCE:CE                   0.555          a2/k1/count_0
+    ----------------------------------------
+    Total                      3.812ns (2.477ns logic, 1.335ns route)
+                                       (65.0% logic, 35.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk2'
+  Total number of paths / destination ports: 6 / 6
+-------------------------------------------------------------------------
+Offset:              3.405ns (Levels of Logic = 2)
+  Source:            clk3 (PAD)
+  Destination:       a1/count2_2 (FF)
+  Destination Clock: clk2 rising
+
+  Data Path: clk3 to a1/count2_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            14   1.218   1.175  clk3_IBUF (clk3_IBUF)
+     LUT4:I0->O            1   0.704   0.000  a1/count2_Q_mux0000<2>11 (a1/count2_Q_mux0000<2>)
+     FDCP:D                    0.308          a1/count2_2
+    ----------------------------------------
+    Total                      3.405ns (2.230ns logic, 1.175ns route)
+                                       (65.5% logic, 34.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'a2/tick1'
+  Total number of paths / destination ports: 21 / 7
+-------------------------------------------------------------------------
+Offset:              6.503ns (Levels of Logic = 5)
+  Source:            en_aes (PAD)
+  Destination:       a2/count_3 (FF)
+  Destination Clock: a2/tick1 rising
+
+  Data Path: en_aes to a2/count_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   1.218   0.591  en_aes_IBUF (en_aes_IBUF)
+     LUT4_L:I3->LO         1   0.704   0.104  a2/count_and0000_SW0 (N27)
+     LUT4:I3->O            6   0.704   0.844  a2/count_and0000 (a2/count_and0000)
+     LUT2:I0->O            2   0.704   0.622  a2/count_or00001 (a2/count_or0000)
+     LUT4:I0->O            1   0.704   0.000  a2/count_mux0000<1>1 (a2/count_mux0000<1>)
+     FDC:D                     0.308          a2/count_3
+    ----------------------------------------
+    Total                      6.503ns (4.342ns logic, 2.161ns route)
+                                       (66.8% logic, 33.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'a4/tick1'
+  Total number of paths / destination ports: 21 / 7
+-------------------------------------------------------------------------
+Offset:              6.503ns (Levels of Logic = 5)
+  Source:            en_inv_aes (PAD)
+  Destination:       a4/count_3 (FF)
+  Destination Clock: a4/tick1 rising
+
+  Data Path: en_inv_aes to a4/count_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   1.218   0.591  en_inv_aes_IBUF (en_inv_aes_IBUF)
+     LUT4_L:I3->LO         1   0.704   0.104  a4/count_and0000_SW0 (N23)
+     LUT4:I3->O            6   0.704   0.844  a4/count_and0000 (a4/count_and0000)
+     LUT2:I0->O            2   0.704   0.622  a4/count_or00001 (a4/count_or0000)
+     LUT4:I0->O            1   0.704   0.000  a4/count_mux0000<1>1 (a4/count_mux0000<1>)
+     FDC:D                     0.308          a4/count_3
+    ----------------------------------------
+    Total                      6.503ns (4.342ns logic, 2.161ns route)
+                                       (66.8% logic, 33.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 7 / 7
+-------------------------------------------------------------------------
+Offset:              4.283ns (Levels of Logic = 1)
+  Source:            a1/a (FF)
+  Destination:       a (PAD)
+  Source Clock:      clk rising
+
+  Data Path: a1/a to a
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               1   0.591   0.420  a1/a (a1/a)
+     OBUF:I->O                 3.272          a_OBUF (a)
+    ----------------------------------------
+    Total                      4.283ns (3.863ns logic, 0.420ns route)
+                                       (90.2% logic, 9.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk1'
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Offset:              5.273ns (Levels of Logic = 1)
+  Source:            a1/count1_0 (FF)
+  Destination:       count1<0> (PAD)
+  Source Clock:      clk1 rising
+
+  Data Path: a1/count1_0 to count1<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q            549   0.591   1.410  a1/count1_0 (a1/count1_0)
+     OBUF:I->O                 3.272          count1_0_OBUF (count1<0>)
+    ----------------------------------------
+    Total                      5.273ns (3.863ns logic, 1.410ns route)
+                                       (73.3% logic, 26.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk2'
+  Total number of paths / destination ports: 5 / 5
+-------------------------------------------------------------------------
+Offset:              5.138ns (Levels of Logic = 1)
+  Source:            a1/count2_1 (FF)
+  Destination:       count2<1> (PAD)
+  Source Clock:      clk2 rising
+
+  Data Path: a1/count2_1 to count2<1>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCP:C->Q            74   0.591   1.275  a1/count2_1 (a1/count2_1)
+     OBUF:I->O                 3.272          count2_1_OBUF (count2<1>)
+    ----------------------------------------
+    Total                      5.138ns (3.863ns logic, 1.275ns route)
+                                       (75.2% logic, 24.8% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 126.00 secs
+Total CPU time to Xst completion: 125.88 secs
+ 
+--> 
+
+Total memory usage is 494604 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  217 (   0 filtered)
+Number of infos    :   65 (   0 filtered)
+

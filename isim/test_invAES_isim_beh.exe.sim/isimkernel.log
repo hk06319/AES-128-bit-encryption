@@ -1,0 +1,29 @@
+Command line:
+   test_invAES_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  51267
+
+Tue Nov 26 22:29:48 2013
+
+
+ Elaboration Time: 0.0468 sec
+
+ Current Memory Usage: 517.607 Meg
+
+ Total Signals          : 856
+ Total Nets             : 4504
+ Total Signal Drivers   : 1801
+ Total Blocks           : 293
+ Total Primitive Blocks : 221
+ Total Processes        : 1901
+ Total Traceable Variables  : 185
+ Total Scalar Nets and Variables : 6330
+Total Line Count : 8478
+
+ Total Simulation Time: 0.109201 sec
+
+ Current Memory Usage: 517.607 Meg
+
+Wed Nov 27 09:15:15 2013
+

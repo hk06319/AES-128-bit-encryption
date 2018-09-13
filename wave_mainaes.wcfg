@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="F:/PROJECTS/final_year_project/test_aes_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="test_aes" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="11" />
+   <wvobject fp_name="/test_aes/data_out" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_out[127:0]</obj_property>
+      <obj_property name="ObjectShortName">data_out[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_aes/test1" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">test1[127:0]</obj_property>
+      <obj_property name="ObjectShortName">test1[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_aes/test2" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">test2[127:0]</obj_property>
+      <obj_property name="ObjectShortName">test2[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_aes/test3" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">test3[127:0]</obj_property>
+      <obj_property name="ObjectShortName">test3[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_aes/test_state" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">test_state[4:0]</obj_property>
+      <obj_property name="ObjectShortName">test_state[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_aes/rw" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rw[1:0]</obj_property>
+      <obj_property name="ObjectShortName">rw[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_aes/x" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">x</obj_property>
+      <obj_property name="ObjectShortName">x</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_aes/data_in" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_in[127:0]</obj_property>
+      <obj_property name="ObjectShortName">data_in[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_aes/key_in" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">key_in[127:0]</obj_property>
+      <obj_property name="ObjectShortName">key_in[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_aes/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_aes/reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+</wave_config>

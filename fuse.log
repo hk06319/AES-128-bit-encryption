@@ -1,0 +1,36 @@
+Running: C:\Xilinx\14.2\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o F:/PROJECTS/final_year_project/test_aes_isim_beh.exe -prj F:/PROJECTS/final_year_project/test_aes_beh.prj work.test_aes work.glbl 
+ISim P.28xd (signature 0xa0883be4)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "F:/PROJECTS/final_year_project/xtime.v" into library work
+Analyzing Verilog file "F:/PROJECTS/final_year_project/subbyte.v" into library work
+Analyzing Verilog file "F:/PROJECTS/final_year_project/shiftRow.v" into library work
+Analyzing Verilog file "F:/PROJECTS/final_year_project/mult.v" into library work
+Analyzing Verilog file "F:/PROJECTS/final_year_project/subbyteShiftRow.v" into library work
+Analyzing Verilog file "F:/PROJECTS/final_year_project/row2col.v" into library work
+Analyzing Verilog file "F:/PROJECTS/final_year_project/mixcolum.v" into library work
+Analyzing Verilog file "F:/PROJECTS/final_year_project/keyexpansion_new.v" into library work
+Analyzing Verilog file "F:/PROJECTS/final_year_project/main_aes.v" into library work
+Analyzing Verilog file "F:/PROJECTS/final_year_project/test_aes.v" into library work
+Analyzing Verilog file "C:/Xilinx/14.2/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+WARNING:HDLCompiler:1016 - "F:/PROJECTS/final_year_project/test_aes.v" Line 40: Port key_out is not connected to this instance
+Completed static elaboration
+Compiling module row2column
+Compiling module subbyte
+Compiling module keyexpansion_new
+Compiling module shiftRow
+Compiling module subbyteShiftRow
+Compiling module xtime
+Compiling module mult
+Compiling module mixcolum
+Compiling module main_aes
+Compiling module test_aes
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 4 sub-compilation(s) to finish...
+Compiled 11 Verilog Units
+Built simulation executable F:/PROJECTS/final_year_project/test_aes_isim_beh.exe
+Fuse Memory Usage: 28764 KB
+Fuse CPU Usage: 655 ms

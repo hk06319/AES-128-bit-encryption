@@ -1,0 +1,4 @@
+verilog isim_temp "subbyte.v"
+verilog isim_temp "keyexpansion.v"
+verilog isim_temp "test_key_expansion.v"
+verilog isim_temp "C:/Xilinx/14.2/ISE_DS/ISE//verilog/src/glbl.v"

@@ -1,0 +1,603 @@
+Release 14.2 - xst P.28xd (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Reading design: inv_AES.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "inv_AES.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "inv_AES"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : inv_AES
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Block
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Block
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "xtime.v" in library work
+Compiling verilog file "subbyte.v" in library work
+Module <xtime> compiled
+Compiling verilog file "inv_mult.v" in library work
+Module <subbyte> compiled
+Compiling verilog file "invsubbyte.v" in library work
+Module <inv_mult> compiled
+Compiling verilog file "invshiftRow.v" in library work
+Module <invsubbyte> compiled
+Compiling verilog file "row2col.v" in library work
+Module <invshiftRow> compiled
+Compiling verilog file "inv_mixcolum.v" in library work
+Module <row2column> compiled
+Compiling verilog file "inv_keyexpansion.v" in library work
+Module <inv_mixcolum> compiled
+Compiling verilog file "invsubbyteShiftRow.v" in library work
+Module <inv_keyexpansion> compiled
+Compiling verilog file "inv_AES.v" in library work
+Module <invsubbyteShiftRow> compiled
+Module <inv_AES> compiled
+No errors in compilation
+Analysis of file <"inv_AES.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <inv_AES> in library <work>.
+
+Analyzing hierarchy for module <row2column> in library <work>.
+
+Analyzing hierarchy for module <inv_keyexpansion> in library <work>.
+
+Analyzing hierarchy for module <invsubbyteShiftRow> in library <work>.
+
+Analyzing hierarchy for module <inv_mixcolum> in library <work> with parameters.
+	enb1 = "11"
+	enb10 = "10"
+	enb11 = "11"
+	enb12 = "00"
+	enb13 = "00"
+	enb14 = "01"
+	enb15 = "10"
+	enb16 = "11"
+	enb2 = "00"
+	enb3 = "01"
+	enb4 = "10"
+	enb5 = "10"
+	enb6 = "11"
+	enb7 = "00"
+	enb8 = "01"
+	enb9 = "01"
+
+Analyzing hierarchy for module <subbyte> in library <work>.
+
+Analyzing hierarchy for module <invsubbyte> in library <work>.
+
+Analyzing hierarchy for module <invshiftRow> in library <work>.
+
+Analyzing hierarchy for module <inv_mult> in library <work>.
+
+Analyzing hierarchy for module <xtime> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <inv_AES>.
+Module <inv_AES> is correct for synthesis.
+ 
+Analyzing module <row2column> in library <work>.
+Module <row2column> is correct for synthesis.
+ 
+Analyzing module <inv_keyexpansion> in library <work>.
+Module <inv_keyexpansion> is correct for synthesis.
+ 
+Analyzing module <subbyte> in library <work>.
+Module <subbyte> is correct for synthesis.
+ 
+Analyzing module <invsubbyteShiftRow> in library <work>.
+Module <invsubbyteShiftRow> is correct for synthesis.
+ 
+Analyzing module <invsubbyte> in library <work>.
+Module <invsubbyte> is correct for synthesis.
+ 
+Analyzing module <invshiftRow> in library <work>.
+Module <invshiftRow> is correct for synthesis.
+ 
+Analyzing module <inv_mixcolum> in library <work>.
+	enb1 = 2'b11
+	enb10 = 2'b10
+	enb11 = 2'b11
+	enb12 = 2'b00
+	enb13 = 2'b00
+	enb14 = 2'b01
+	enb15 = 2'b10
+	enb16 = 2'b11
+	enb2 = 2'b00
+	enb3 = 2'b01
+	enb4 = 2'b10
+	enb5 = 2'b10
+	enb6 = 2'b11
+	enb7 = 2'b00
+	enb8 = 2'b01
+	enb9 = 2'b01
+Module <inv_mixcolum> is correct for synthesis.
+ 
+Analyzing module <inv_mult> in library <work>.
+Module <inv_mult> is correct for synthesis.
+ 
+Analyzing module <xtime> in library <work>.
+Module <xtime> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <row2column>.
+    Related source file is "row2col.v".
+Unit <row2column> synthesized.
+
+
+Synthesizing Unit <subbyte>.
+    Related source file is "subbyte.v".
+    Found 256x8-bit ROM for signal <out>.
+    Summary:
+	inferred   1 ROM(s).
+Unit <subbyte> synthesized.
+
+
+Synthesizing Unit <invsubbyte>.
+    Related source file is "invsubbyte.v".
+    Found 256x8-bit ROM for signal <out>.
+    Summary:
+	inferred   1 ROM(s).
+Unit <invsubbyte> synthesized.
+
+
+Synthesizing Unit <invshiftRow>.
+    Related source file is "invshiftRow.v".
+Unit <invshiftRow> synthesized.
+
+
+Synthesizing Unit <xtime>.
+    Related source file is "xtime.v".
+    Found 2-bit xor2 for signal <out<4:3>>.
+    Found 1-bit xor2 for signal <out<1>>.
+Unit <xtime> synthesized.
+
+
+Synthesizing Unit <inv_keyexpansion>.
+    Related source file is "inv_keyexpansion.v".
+    Found 1-bit register for signal <x>.
+    Found 6-bit up counter for signal <count>.
+    Found 128-bit register for signal <out0>.
+    Found 1-bit xor2 for signal <out0_0$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_1$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_10$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_100$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_101$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_102$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_103$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_104$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_105$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_106$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_107$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_108$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_109$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_11$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_110$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_111$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_112$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_113$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_114$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_115$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_116$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_117$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_118$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_119$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_12$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_120$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_121$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_122$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_123$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_124$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_125$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_126$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_127$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_13$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_14$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_15$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_16$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_17$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_18$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_19$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_2$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_20$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_21$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_22$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_23$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_24$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_25$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_26$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_27$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_28$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_29$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_3$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_30$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_31$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_32$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_33$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_34$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_35$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_36$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_37$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_38$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_39$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_4$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_40$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_41$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_42$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_43$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_44$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_45$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_46$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_47$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_48$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_49$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_5$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_50$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_51$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_52$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_53$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_54$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_55$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_56$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_57$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_58$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_59$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_6$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_60$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_61$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_62$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_63$xor0000> created at line 101.
+    Found 1-bit xor2 for signal <out0_64$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_65$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_66$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_67$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_68$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_69$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_7$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_70$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_71$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_72$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_73$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_74$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_75$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_76$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_77$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_78$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_79$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_8$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_80$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_81$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_82$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_83$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_84$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_85$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_86$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_87$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_88$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_89$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_9$xor0000> created at line 100.
+    Found 1-bit xor2 for signal <out0_90$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_91$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_92$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_93$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_94$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_95$xor0000> created at line 102.
+    Found 1-bit xor2 for signal <out0_96$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_97$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_98$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <out0_99$xor0000> created at line 103.
+    Found 128-bit register for signal <out1>.
+    Found 1-bit xor2 for signal <out1_0$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_1$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_10$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_100$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_101$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_102$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_103$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_104$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_105$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_106$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_107$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_108$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_109$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_11$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_110$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_111$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_112$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_113$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_114$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_115$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_116$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_117$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_118$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_119$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_12$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_120$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_121$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_122$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_123$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_124$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_125$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_126$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_127$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_13$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_14$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_15$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_16$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_17$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_18$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_19$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_2$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_20$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_21$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_22$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_23$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_24$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_25$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_26$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_27$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_28$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_29$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_3$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_30$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_31$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_32$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_33$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_34$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_35$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_36$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_37$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_38$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_39$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_4$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_40$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_41$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_42$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_43$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_44$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_45$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_46$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_47$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_48$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_49$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_5$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_50$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_51$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_52$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_53$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_54$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_55$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_56$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_57$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_58$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_59$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_6$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_60$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_61$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_62$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_63$xor0000> created at line 96.
+    Found 1-bit xor2 for signal <out1_64$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_65$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_66$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_67$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_68$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_69$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_7$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_70$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_71$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_72$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_73$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_74$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_75$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_76$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_77$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_78$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_79$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_8$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_80$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_81$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_82$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_83$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_84$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_85$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_86$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_87$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_88$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_89$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_9$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out1_90$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_91$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_92$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_93$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_94$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_95$xor0000> created at line 97.
+    Found 1-bit xor2 for signal <out1_96$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_97$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_98$xor0000> created at line 98.
+    Found 1-bit xor2 for signal <out1_99$xor0000> created at line 98.
+    Summary:
+	inferred   1 Counter(s).
+	inferred 257 D-type flip-flop(s).
+Unit <inv_keyexpansion> synthesized.
+
+
+Synthesizing Unit <invsubbyteShiftRow>.
+    Related source file is "invsubbyteShiftRow.v".
+Unit <invsubbyteShiftRow> synthesized.
+
+
+Synthesizing Unit <inv_mult>.
+    Related source file is "inv_mult.v".
+    Found 8-bit 4-to-1 multiplexer for signal <out>.
+    Found 8-bit xor2 for signal <out$xor0000> created at line 37.
+    Found 8-bit xor2 for signal <out$xor0001> created at line 36.
+    Found 8-bit xor2 for signal <out$xor0002> created at line 35.
+    Found 8-bit xor2 for signal <out$xor0003> created at line 34.
+    Found 8-bit xor2 for signal <out$xor0004> created at line 37.
+    Summary:
+	inferred   8 Multiplexer(s).
+Unit <inv_mult> synthesized.
+
+
+Synthesizing Unit <inv_mixcolum>.
+    Related source file is "inv_mixcolum.v".
+    Found 32-bit xor4 for signal <out>.
+    Summary:
+	inferred  32 Xor(s).
+Unit <inv_mixcolum> synthesized.
+
+
+Synthesizing Unit <inv_AES>.
+    Related source file is "inv_AES.v".
+WARNING:Xst:646 - Signal <test_state> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <test3> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <test2> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <test1> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 2-bit register for signal <rw>.
+    Found 5-bit register for signal <count>.
+    Found 5-bit adder for signal <count$addsub0000> created at line 84.
+    Found 128-bit register for signal <data>.
+    Found 128-bit register for signal <reg1>.
+    Found 128-bit register for signal <reg2>.
+    Found 128-bit xor2 for signal <temp3$xor0000> created at line 92.
+    Found 128-bit xor2 for signal <temp3$xor0001> created at line 92.
+    Found 1-bit register for signal <tick>.
+    Summary:
+	inferred 390 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <inv_AES> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 24
+ 256x8-bit ROM                                         : 24
+# Adders/Subtractors                                   : 1
+ 5-bit adder                                           : 1
+# Counters                                             : 1
+ 6-bit up counter                                      : 1
+# Registers                                            : 263
+ 1-bit register                                        : 258
+ 128-bit register                                      : 3
+ 2-bit register                                        : 1
+ 5-bit register                                        : 1
+# Multiplexers                                         : 64
+ 8-bit 4-to-1 multiplexer                              : 64
+# Xors                                                 : 1282
+ 1-bit xor2                                            : 832
+ 1-bit xor4                                            : 128
+ 128-bit xor2                                          : 2
+ 8-bit xor2                                            : 320
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+

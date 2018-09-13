@@ -1,0 +1,41 @@
+xst -intstyle ise -ifn "F:/PROJECTS/final_year_project/main_aes.xst" -ofn "F:/PROJECTS/final_year_project/main_aes.syr" 
+xst -intstyle ise -ifn "F:/PROJECTS/final_year_project/main_aes.xst" -ofn "F:/PROJECTS/final_year_project/main_aes.syr" 
+xst -intstyle ise -ifn "F:/PROJECTS/final_year_project/main_aes.xst" -ofn "F:/PROJECTS/final_year_project/main_aes.syr" 
+xst -intstyle ise -ifn "F:/PROJECTS/final_year_project/main_aes.xst" -ofn "F:/PROJECTS/final_year_project/main_aes.syr" 
+xst -intstyle ise -ifn "F:/PROJECTS/final_year_project/main_aes.xst" -ofn "F:/PROJECTS/final_year_project/main_aes.syr" 
+xst -intstyle ise -ifn "F:/PROJECTS/final_year_project/main_aes.xst" -ofn "F:/PROJECTS/final_year_project/main_aes.syr" 
+xst -intstyle ise -ifn "F:/PROJECTS/final_year_project/main_aes.xst" -ofn "F:/PROJECTS/final_year_project/main_aes.syr" 
+xst -intstyle ise -ifn "F:/PROJECTS/final_year_project/main_aes.xst" -ofn "F:/PROJECTS/final_year_project/main_aes.syr" 
+xst -intstyle ise -ifn "F:/PROJECTS/final_year_project/main_aes.xst" -ofn "F:/PROJECTS/final_year_project/main_aes.syr" 
+xst -intstyle ise -ifn "F:/PROJECTS/final_year_project/main_aes.xst" -ofn "F:/PROJECTS/final_year_project/main_aes.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 main_aes.ngc main_aes.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o main_aes_map.ncd main_aes.ngd main_aes.pcf 
+xst -intstyle ise -ifn "F:/PROJECTS/final_year_project/main_aes.xst" -ofn "F:/PROJECTS/final_year_project/main_aes.syr" 
+xst -intstyle ise -ifn "F:/PROJECTS/final_year_project/main_aes.xst" -ofn "F:/PROJECTS/final_year_project/main_aes.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 main_aes.ngc main_aes.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o main_aes_map.ncd main_aes.ngd main_aes.pcf 
+xst -intstyle ise -ifn "F:/PROJECTS/final_year_project/main_aes.xst" -ofn "F:/PROJECTS/final_year_project/main_aes.syr" 
+xst -intstyle ise -ifn "F:/PROJECTS/final_year_project/main_aes.xst" -ofn "F:/PROJECTS/final_year_project/main_aes.syr" 
+xst -intstyle ise -ifn "F:/PROJECTS/final_year_project/main_aes.xst" -ofn "F:/PROJECTS/final_year_project/main_aes.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc5vlx20t-ff323-2 main_aes.ngc main_aes.ngd  
+map -intstyle ise -p xc5vlx20t-ff323-2 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -ir off -pr off -lc off -power off -o main_aes_map.ncd main_aes.ngd main_aes.pcf 
+par -w -intstyle ise -ol high -mt off main_aes_map.ncd main_aes.ncd main_aes.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml main_aes.twx main_aes.ncd -o main_aes.twr main_aes.pcf 
+xst -intstyle ise -ifn "F:/PROJECTS/final_year_project/main_aes.xst" -ofn "F:/PROJECTS/final_year_project/main_aes.syr" 
+xst -intstyle ise -ifn "F:/PROJECTS/final_year_project/main_aes.xst" -ofn "F:/PROJECTS/final_year_project/main_aes.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 main_aes.ngc main_aes.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o main_aes_map.ncd main_aes.ngd main_aes.pcf 
+par -w -intstyle ise -ol high -t 1 main_aes_map.ncd main_aes.ncd main_aes.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml main_aes.twx main_aes.ncd -o main_aes.twr main_aes.pcf 
+xst -intstyle ise -ifn "F:/PROJECTS/final_year_project/main_aes.xst" -ofn "F:/PROJECTS/final_year_project/main_aes.syr" 
+xst -intstyle ise -ifn "F:/PROJECTS/final_year_project/main_aes.xst" -ofn "F:/PROJECTS/final_year_project/main_aes.syr" 
+xst -intstyle ise -ifn "F:/PROJECTS/final_year_project/main_aes.xst" -ofn "F:/PROJECTS/final_year_project/main_aes.syr" 
+xst -intstyle ise -ifn "F:/PROJECTS/final_year_project/main_aes.xst" -ofn "F:/PROJECTS/final_year_project/main_aes.syr" 
+xst -intstyle ise -ifn "F:/PROJECTS/final_year_project/main_aes.xst" -ofn "F:/PROJECTS/final_year_project/main_aes.syr" 
+xst -intstyle ise -ifn "F:/PROJECTS/final_year_project/main_aes.xst" -ofn "F:/PROJECTS/final_year_project/main_aes.syr" 
+xst -intstyle ise -ifn "F:/PROJECTS/final_year_project/main_aes.xst" -ofn "F:/PROJECTS/final_year_project/main_aes.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 main_aes.ngc main_aes.ngd  
+xst -intstyle ise -ifn "F:/PROJECTS/final_year_project/main_aes.xst" -ofn "F:/PROJECTS/final_year_project/main_aes.syr" 
+xst -intstyle ise -ifn "F:/PROJECTS/final_year_project/main_aes.xst" -ofn "F:/PROJECTS/final_year_project/main_aes.syr" 
+xst -intstyle ise -ifn "F:/PROJECTS/final_year_project/main_aes.xst" -ofn "F:/PROJECTS/final_year_project/main_aes.syr" 
+xst -intstyle ise -ifn "F:/PROJECTS/final_year_project/main_aes.xst" -ofn "F:/PROJECTS/final_year_project/main_aes.syr" 

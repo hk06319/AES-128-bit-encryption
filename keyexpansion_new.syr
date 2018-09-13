@@ -1,0 +1,665 @@
+Release 14.2 - xst P.28xd (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Reading design: keyexpansion_new.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "keyexpansion_new.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "keyexpansion_new"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : keyexpansion_new
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Block
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Block
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "subbyte.v" in library work
+Compiling verilog file "keyexpansion_new.v" in library work
+Module <subbyte> compiled
+Module <keyexpansion_new> compiled
+No errors in compilation
+Analysis of file <"keyexpansion_new.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <keyexpansion_new> in library <work>.
+
+Analyzing hierarchy for module <subbyte> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <keyexpansion_new>.
+Module <keyexpansion_new> is correct for synthesis.
+ 
+Analyzing module <subbyte> in library <work>.
+Module <subbyte> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <subbyte>.
+    Related source file is "subbyte.v".
+    Found 256x8-bit ROM for signal <out>.
+    Summary:
+	inferred   1 ROM(s).
+Unit <subbyte> synthesized.
+
+
+Synthesizing Unit <keyexpansion_new>.
+    Related source file is "keyexpansion_new.v".
+    Found 1-bit register for signal <x>.
+    Found 6-bit up counter for signal <count>.
+    Found 128-bit register for signal <out0>.
+    Found 1-bit xor2 for signal <out0_0$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_1$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_10$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_100$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_101$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_102$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_103$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_104$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_105$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_106$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_107$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_108$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_109$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_11$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_110$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_111$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_112$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_113$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_114$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_115$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_116$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_117$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_118$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_119$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_12$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_120$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_121$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_122$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_123$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_124$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_125$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_126$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_127$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_13$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_14$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_15$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_16$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_17$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_18$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_19$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_2$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_20$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_21$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_22$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_23$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_24$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_25$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_26$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_27$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_28$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_29$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_3$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_30$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_31$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_32$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_33$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_34$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_35$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_36$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_37$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_38$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_39$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_4$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_40$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_41$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_42$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_43$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_44$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_45$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_46$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_47$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_48$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_49$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_5$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_50$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_51$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_52$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_53$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_54$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_55$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_56$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_57$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_58$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_59$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_6$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_60$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_61$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_62$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_63$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_64$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_65$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_66$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_67$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_68$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_69$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_7$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_70$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_71$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_72$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_73$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_74$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_75$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_76$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_77$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_78$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_79$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_8$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_80$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_81$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_82$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_83$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_84$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_85$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_86$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_87$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_88$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_89$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_9$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_90$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_91$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_92$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_93$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_94$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_95$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_96$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_97$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_98$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_99$xor0000> created at line 92.
+    Found 128-bit register for signal <out1>.
+    Found 1-bit xor2 for signal <out1_0$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_1$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_10$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_100$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_101$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_102$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_103$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_104$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_105$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_106$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_107$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_108$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_109$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_11$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_110$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_111$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_112$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_113$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_114$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_115$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_116$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_117$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_118$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_119$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_12$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_120$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_121$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_122$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_123$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_124$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_125$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_126$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_127$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_13$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_14$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_15$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_16$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_17$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_18$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_19$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_2$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_20$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_21$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_22$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_23$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_24$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_25$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_26$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_27$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_28$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_29$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_3$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_30$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_31$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_32$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_33$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_34$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_35$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_36$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_37$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_38$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_39$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_4$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_40$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_41$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_42$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_43$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_44$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_45$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_46$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_47$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_48$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_49$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_5$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_50$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_51$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_52$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_53$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_54$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_55$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_56$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_57$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_58$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_59$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_6$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_60$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_61$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_62$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_63$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_64$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_65$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_66$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_67$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_68$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_69$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_7$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_70$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_71$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_72$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_73$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_74$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_75$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_76$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_77$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_78$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_79$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_8$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_80$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_81$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_82$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_83$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_84$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_85$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_86$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_87$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_88$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_89$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_9$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_90$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_91$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_92$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_93$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_94$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_95$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_96$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_97$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_98$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_99$xor0000> created at line 87.
+    Summary:
+	inferred   1 Counter(s).
+	inferred 257 D-type flip-flop(s).
+Unit <keyexpansion_new> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 8
+ 256x8-bit ROM                                         : 8
+# Counters                                             : 1
+ 6-bit up counter                                      : 1
+# Registers                                            : 257
+ 1-bit register                                        : 257
+# Xors                                                 : 256
+ 1-bit xor2                                            : 256
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 8
+ 256x8-bit ROM                                         : 8
+# Counters                                             : 1
+ 6-bit up counter                                      : 1
+# Registers                                            : 257
+ Flip-Flops                                            : 257
+# Xors                                                 : 256
+ 1-bit xor2                                            : 256
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <keyexpansion_new> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block keyexpansion_new, actual ratio is 17.
+FlipFlop count_3 has been replicated 1 time(s)
+FlipFlop out0_16 has been replicated 2 time(s)
+FlipFlop out0_17 has been replicated 2 time(s)
+FlipFlop out0_18 has been replicated 2 time(s)
+FlipFlop out0_19 has been replicated 2 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 272
+ Flip-Flops                                            : 272
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : keyexpansion_new.ngr
+Top Level Output File Name         : keyexpansion_new
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 387
+
+Cell Usage :
+# BELS                             : 2485
+#      INV                         : 2
+#      LUT2                        : 105
+#      LUT2_D                      : 2
+#      LUT3                        : 65
+#      LUT3_D                      : 6
+#      LUT3_L                      : 5
+#      LUT4                        : 1273
+#      LUT4_D                      : 11
+#      LUT4_L                      : 81
+#      MUXF5                       : 514
+#      MUXF6                       : 256
+#      MUXF7                       : 128
+#      MUXF8                       : 36
+#      VCC                         : 1
+# FlipFlops/Latches                : 272
+#      FD_1                        : 2
+#      FDC_1                       : 1
+#      FDCE                        : 7
+#      FDE_1                       : 122
+#      FDS_1                       : 140
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 386
+#      IBUF                        : 129
+#      OBUF                        : 257
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                      797  out of   4656    17%  
+ Number of Slice Flip Flops:            271  out of   9312     2%  
+ Number of 4 input LUTs:               1550  out of   9312    16%  
+ Number of IOs:                         387
+ Number of bonded IOBs:                 387  out of    232   166% (*) 
+    IOB Flip Flops:                       1
+ Number of GCLKs:                         1  out of     24     4%  
+
+WARNING:Xst:1336 -  (*) More than 100% of Device resources are used
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 272   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+reset                              | IBUF                   | 8     |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 7.486ns (Maximum Frequency: 133.589MHz)
+   Minimum input arrival time before clock: 3.848ns
+   Maximum output required time after clock: 5.156ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 7.486ns (frequency: 133.589MHz)
+  Total number of paths / destination ports: 9545 / 540
+-------------------------------------------------------------------------
+Delay:               7.486ns (Levels of Logic = 3)
+  Source:            count_0 (FF)
+  Destination:       out0_126 (FF)
+  Source Clock:      clk falling
+  Destination Clock: clk falling
+
+  Data Path: count_0 to out0_126
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q           173   0.591   1.482  count_0 (count_0)
+     LUT2_D:I0->O          6   0.704   0.673  out1_126_or000111 (N271)
+     LUT4_D:I3->O         31   0.704   1.297  out0_127_or00021 (out0_127_or0002)
+     LUT4:I2->O            1   0.704   0.420  out0_121_mux00004 (out0_121_mux00004)
+     FDS_1:S                   0.911          out0_121
+    ----------------------------------------
+    Total                      7.486ns (3.614ns logic, 3.872ns route)
+                                       (48.3% logic, 51.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 136 / 136
+-------------------------------------------------------------------------
+Offset:              3.848ns (Levels of Logic = 2)
+  Source:            in<127> (PAD)
+  Destination:       out0_127 (FF)
+  Destination Clock: clk falling
+
+  Data Path: in<127> to out0_127
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.218   0.595  in_127_IBUF (in_127_IBUF)
+     LUT4:I0->O            1   0.704   0.420  out0_127_mux00004 (out0_127_mux00004)
+     FDS_1:S                   0.911          out0_127
+    ----------------------------------------
+    Total                      3.848ns (2.833ns logic, 1.015ns route)
+                                       (73.6% logic, 26.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 257 / 257
+-------------------------------------------------------------------------
+Offset:              5.156ns (Levels of Logic = 1)
+  Source:            out0_27 (FF)
+  Destination:       round_key1<27> (PAD)
+  Source Clock:      clk falling
+
+  Data Path: out0_27 to round_key1<27>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDS_1:C->Q          131   0.591   1.293  out0_27 (out0_27)
+     OBUF:I->O                 3.272          round_key1_27_OBUF (round_key1<27>)
+    ----------------------------------------
+    Total                      5.156ns (3.863ns logic, 1.293ns route)
+                                       (74.9% logic, 25.1% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 28.00 secs
+Total CPU time to Xst completion: 28.20 secs
+ 
+--> 
+
+Total memory usage is 290956 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

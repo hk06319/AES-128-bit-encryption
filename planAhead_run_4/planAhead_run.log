@@ -1,0 +1,113 @@
+
+****** PlanAhead v14.2 (64-bit)
+  **** Build 194362 by xbuild on Fri Jul 20 18:52:11 MDT 2012
+    ** Copyright 1986-1999, 2001-2012 Xilinx, Inc. All Rights Reserved.
+
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Common 17-86] Your PlanAhead license expires in -145 day(s)
+INFO: [Device 21-36] Loading parts and site information from C:/Xilinx/14.2/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [C:/Xilinx/14.2/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [C:/Xilinx/14.2/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source F:/PROJECTS/final_year_project/pa.fromHdl.tcl
+# create_project -name final_year_project -dir "F:/PROJECTS/final_year_project/planAhead_run_4" -part xc3s500efg320-4
+Parsing template File [C:/Xilinx/14.2/ISE_DS/ISE/data/projnav/templates/verilog.xml].
+Finished parsing template File [C:/Xilinx/14.2/ISE_DS/ISE/data/projnav/templates/verilog.xml].
+Parsing template File [C:/Xilinx/14.2/ISE_DS/ISE/data/projnav/templates/vhdl.xml].
+Finished parsing template File [C:/Xilinx/14.2/ISE_DS/ISE/data/projnav/templates/vhdl.xml].
+Parsing template File [C:/Xilinx/14.2/ISE_DS/ISE/data/projnav/templates/ucf.xml].
+Finished parsing template File [C:/Xilinx/14.2/ISE_DS/ISE/data/projnav/templates/ucf.xml].
+# set_param project.pinAheadLayout yes
+# set srcset [get_property srcset [current_run -impl]]
+# set_property target_constrs_file "final.ucf" [current_fileset -constrset]
+Adding file 'F:/PROJECTS/final_year_project/final.ucf' to fileset 'constrs_1'
+# set hdlfile [add_files [list {xtime.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {subbyte.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {shiftRow.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {mult.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {subbyteShiftRow.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {row2col.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {mixcolum.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {keyexpansion_new.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {hex_ascii.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {ps2_rx.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {mem_io.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {main_aes.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {final.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set_property top final $srcset
+# add_files [list {final.ucf}] -fileset [get_property constrset [current_run]]
+# open_rtl_design -part xc3s500efg320-4
+Using Verific elaboration
+Parsing VHDL file "C:/Xilinx/14.2/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
+Analyzing Verilog file "F:/PROJECTS/final_year_project/xtime.v" into library work
+Analyzing Verilog file "F:/PROJECTS/final_year_project/subbyte.v" into library work
+Analyzing Verilog file "F:/PROJECTS/final_year_project/shiftRow.v" into library work
+Analyzing Verilog file "F:/PROJECTS/final_year_project/mult.v" into library work
+Analyzing Verilog file "F:/PROJECTS/final_year_project/subbyteShiftRow.v" into library work
+Analyzing Verilog file "F:/PROJECTS/final_year_project/row2col.v" into library work
+Analyzing Verilog file "F:/PROJECTS/final_year_project/mixcolum.v" into library work
+Analyzing Verilog file "F:/PROJECTS/final_year_project/keyexpansion_new.v" into library work
+Analyzing Verilog file "F:/PROJECTS/final_year_project/hex_ascii.v" into library work
+Analyzing Verilog file "F:/PROJECTS/final_year_project/ps2_rx.v" into library work
+Analyzing Verilog file "F:/PROJECTS/final_year_project/mem_io.v" into library work
+Analyzing Verilog file "F:/PROJECTS/final_year_project/main_aes.v" into library work
+Analyzing Verilog file "F:/PROJECTS/final_year_project/final.v" into library work
+INFO: [Designutils 20-910] Reading macro library C:/Xilinx/14.2/ISE_DS/PlanAhead/data\./parts/xilinx/spartan3e/spartan3e/hd_int_macros.edn
+Parsing EDIF File [C:/Xilinx/14.2/ISE_DS/PlanAhead/data\./parts/xilinx/spartan3e/spartan3e/hd_int_macros.edn]
+Finished Parsing EDIF File [C:/Xilinx/14.2/ISE_DS/PlanAhead/data\./parts/xilinx/spartan3e/spartan3e/hd_int_macros.edn]
+Loading clock regions from C:/Xilinx/14.2/ISE_DS/PlanAhead/data\parts/xilinx/spartan3e/spartan3e/xc3s500e/ClockRegion.xml
+Loading clock buffers from C:/Xilinx/14.2/ISE_DS/PlanAhead/data\parts/xilinx/spartan3e/spartan3e/xc3s500e/ClockBuffers.xml
+Loading package from C:/Xilinx/14.2/ISE_DS/PlanAhead/data\parts/xilinx/spartan3e/spartan3e/xc3s500e/fg320/Package.xml
+Loading io standards from C:/Xilinx/14.2/ISE_DS/PlanAhead/data\./parts/xilinx/spartan3e/IOStandards.xml
+INFO: [Device 21-19] Loading pkg sso from C:/Xilinx/14.2/ISE_DS/PlanAhead/data\parts/xilinx/spartan3e/spartan3e/xc3s500e/fg320/SSORules.xml
+Loading list of drcs for the architecture : C:/Xilinx/14.2/ISE_DS/PlanAhead/data\./parts/xilinx/spartan3e/spartan3e/drc.xml
+INFO: [Timing 38-77] Reading timing library C:/Xilinx/14.2/ISE_DS/PlanAhead/data\parts/xilinx/spartan3e/spartan3e/spartan3e-4.lib.
+INFO: [Timing 38-34] Done reading timing library C:/Xilinx/14.2/ISE_DS/PlanAhead/data\parts/xilinx/spartan3e/spartan3e/spartan3e-4.lib.
+Parsing UCF File [F:/PROJECTS/final_year_project/final.ucf]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'clk2' [F:/PROJECTS/final_year_project/final.ucf:25]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'clk2' [F:/PROJECTS/final_year_project/final.ucf:26]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'clk2' [F:/PROJECTS/final_year_project/final.ucf:27]
+CRITICAL WARNING: [Constraints 18-11] Could not find net 'clk2' [F:/PROJECTS/final_year_project/final.ucf:37]
+CRITICAL WARNING: [Constraints 18-10] Could not create constraint 'CLOCK_DEDICATED_ROUTE' [F:/PROJECTS/final_year_project/final.ucf:37]
+CRITICAL WARNING: [Constraints 18-11] Could not find net 'clk3' [F:/PROJECTS/final_year_project/final.ucf:38]
+CRITICAL WARNING: [Constraints 18-10] Could not create constraint 'CLOCK_DEDICATED_ROUTE' [F:/PROJECTS/final_year_project/final.ucf:38]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'clk3' [F:/PROJECTS/final_year_project/final.ucf:41]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'clk3' [F:/PROJECTS/final_year_project/final.ucf:42]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'clk3' [F:/PROJECTS/final_year_project/final.ucf:45]
+Finished Parsing UCF File [F:/PROJECTS/final_year_project/final.ucf]
+INFO: [Designutils 20-20] Invalid constraints found, use command 'write_ucf -constraints invalid <file>' to save all the invalid constraints to a file
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Phase 0 | Netlist Checksum: 2951e21a
+open_rtl_design: Time (s): elapsed = 00:00:11 . Memory (MB): peak = 567.348 ; gain = 136.082
+exit
+INFO: [Common 17-206] Exiting PlanAhead...
+INFO: [Common 17-83] Releasing license: PlanAhead

@@ -1,0 +1,4 @@
+verilog isim_temp "invsubbyte.v"
+verilog isim_temp "invshiftRow.v"
+verilog isim_temp "invsubbyteShiftRow.v"
+verilog isim_temp "C:/Xilinx/14.2/ISE_DS/ISE//verilog/src/glbl.v"

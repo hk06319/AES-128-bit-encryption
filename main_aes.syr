@@ -1,0 +1,1177 @@
+Release 14.2 - xst P.28xd (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.36 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.36 secs
+ 
+--> Reading design: main_aes.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "main_aes.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "main_aes"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : main_aes
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Block
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Block
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "xtime.v" in library work
+Compiling verilog file "subbyte.v" in library work
+Module <xtime> compiled
+Compiling verilog file "shiftRow.v" in library work
+Module <subbyte> compiled
+Compiling verilog file "mult.v" in library work
+Module <shiftRow> compiled
+Compiling verilog file "subbyteShiftRow.v" in library work
+Module <mult> compiled
+Compiling verilog file "row2col.v" in library work
+Module <subbyteShiftRow> compiled
+Compiling verilog file "mixcolum.v" in library work
+Module <row2column> compiled
+Compiling verilog file "keyexpansion_new.v" in library work
+Module <mixcolum> compiled
+Compiling verilog file "main_aes.v" in library work
+Module <keyexpansion_new> compiled
+Module <main_aes> compiled
+No errors in compilation
+Analysis of file <"main_aes.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <main_aes> in library <work>.
+
+Analyzing hierarchy for module <row2column> in library <work>.
+
+Analyzing hierarchy for module <keyexpansion_new> in library <work>.
+
+Analyzing hierarchy for module <subbyteShiftRow> in library <work>.
+
+Analyzing hierarchy for module <mixcolum> in library <work> with parameters.
+	enb1 = "10"
+	enb10 = "01"
+	enb11 = "10"
+	enb12 = "11"
+	enb13 = "11"
+	enb14 = "01"
+	enb15 = "01"
+	enb16 = "10"
+	enb2 = "11"
+	enb3 = "01"
+	enb4 = "01"
+	enb5 = "01"
+	enb6 = "10"
+	enb7 = "11"
+	enb8 = "01"
+	enb9 = "01"
+
+Analyzing hierarchy for module <subbyte> in library <work>.
+
+Analyzing hierarchy for module <shiftRow> in library <work>.
+
+Analyzing hierarchy for module <mult> in library <work>.
+
+Analyzing hierarchy for module <xtime> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <main_aes>.
+Module <main_aes> is correct for synthesis.
+ 
+Analyzing module <row2column> in library <work>.
+Module <row2column> is correct for synthesis.
+ 
+Analyzing module <keyexpansion_new> in library <work>.
+Module <keyexpansion_new> is correct for synthesis.
+ 
+Analyzing module <subbyte> in library <work>.
+Module <subbyte> is correct for synthesis.
+ 
+Analyzing module <subbyteShiftRow> in library <work>.
+Module <subbyteShiftRow> is correct for synthesis.
+ 
+Analyzing module <shiftRow> in library <work>.
+Module <shiftRow> is correct for synthesis.
+ 
+Analyzing module <mixcolum> in library <work>.
+	enb1 = 2'b10
+	enb10 = 2'b01
+	enb11 = 2'b10
+	enb12 = 2'b11
+	enb13 = 2'b11
+	enb14 = 2'b01
+	enb15 = 2'b01
+	enb16 = 2'b10
+	enb2 = 2'b11
+	enb3 = 2'b01
+	enb4 = 2'b01
+	enb5 = 2'b01
+	enb6 = 2'b10
+	enb7 = 2'b11
+	enb8 = 2'b01
+	enb9 = 2'b01
+Module <mixcolum> is correct for synthesis.
+ 
+Analyzing module <mult> in library <work>.
+Module <mult> is correct for synthesis.
+ 
+Analyzing module <xtime> in library <work>.
+Module <xtime> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <row2column>.
+    Related source file is "row2col.v".
+Unit <row2column> synthesized.
+
+
+Synthesizing Unit <subbyte>.
+    Related source file is "subbyte.v".
+    Found 256x8-bit ROM for signal <out>.
+    Summary:
+	inferred   1 ROM(s).
+Unit <subbyte> synthesized.
+
+
+Synthesizing Unit <shiftRow>.
+    Related source file is "shiftRow.v".
+Unit <shiftRow> synthesized.
+
+
+Synthesizing Unit <xtime>.
+    Related source file is "xtime.v".
+    Found 2-bit xor2 for signal <out<4:3>>.
+    Found 1-bit xor2 for signal <out<1>>.
+Unit <xtime> synthesized.
+
+
+Synthesizing Unit <keyexpansion_new>.
+    Related source file is "keyexpansion_new.v".
+    Found 1-bit register for signal <x>.
+    Found 6-bit up counter for signal <count>.
+    Found 128-bit register for signal <out0>.
+    Found 1-bit xor2 for signal <out0_0$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_1$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_10$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_100$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_101$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_102$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_103$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_104$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_105$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_106$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_107$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_108$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_109$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_11$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_110$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_111$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_112$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_113$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_114$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_115$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_116$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_117$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_118$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_119$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_12$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_120$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_121$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_122$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_123$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_124$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_125$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_126$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_127$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_13$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_14$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_15$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_16$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_17$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_18$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_19$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_2$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_20$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_21$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_22$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_23$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_24$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_25$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_26$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_27$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_28$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_29$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_3$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_30$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_31$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_32$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_33$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_34$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_35$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_36$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_37$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_38$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_39$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_4$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_40$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_41$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_42$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_43$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_44$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_45$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_46$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_47$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_48$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_49$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_5$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_50$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_51$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_52$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_53$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_54$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_55$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_56$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_57$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_58$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_59$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_6$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_60$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_61$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_62$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_63$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <out0_64$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_65$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_66$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_67$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_68$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_69$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_7$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_70$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_71$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_72$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_73$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_74$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_75$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_76$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_77$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_78$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_79$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_8$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_80$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_81$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_82$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_83$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_84$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_85$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_86$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_87$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_88$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_89$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_9$xor0000> created at line 95.
+    Found 1-bit xor2 for signal <out0_90$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_91$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_92$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_93$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_94$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_95$xor0000> created at line 93.
+    Found 1-bit xor2 for signal <out0_96$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_97$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_98$xor0000> created at line 92.
+    Found 1-bit xor2 for signal <out0_99$xor0000> created at line 92.
+    Found 128-bit register for signal <out1>.
+    Found 1-bit xor2 for signal <out1_0$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_1$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_10$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_100$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_101$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_102$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_103$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_104$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_105$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_106$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_107$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_108$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_109$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_11$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_110$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_111$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_112$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_113$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_114$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_115$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_116$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_117$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_118$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_119$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_12$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_120$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_121$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_122$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_123$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_124$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_125$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_126$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_127$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_13$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_14$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_15$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_16$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_17$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_18$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_19$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_2$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_20$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_21$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_22$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_23$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_24$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_25$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_26$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_27$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_28$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_29$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_3$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_30$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_31$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_32$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_33$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_34$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_35$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_36$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_37$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_38$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_39$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_4$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_40$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_41$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_42$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_43$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_44$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_45$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_46$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_47$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_48$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_49$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_5$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_50$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_51$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_52$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_53$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_54$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_55$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_56$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_57$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_58$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_59$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_6$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_60$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_61$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_62$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_63$xor0000> created at line 89.
+    Found 1-bit xor2 for signal <out1_64$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_65$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_66$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_67$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_68$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_69$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_7$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_70$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_71$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_72$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_73$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_74$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_75$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_76$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_77$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_78$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_79$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_8$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_80$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_81$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_82$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_83$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_84$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_85$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_86$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_87$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_88$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_89$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_9$xor0000> created at line 90.
+    Found 1-bit xor2 for signal <out1_90$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_91$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_92$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_93$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_94$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_95$xor0000> created at line 88.
+    Found 1-bit xor2 for signal <out1_96$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_97$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_98$xor0000> created at line 87.
+    Found 1-bit xor2 for signal <out1_99$xor0000> created at line 87.
+    Summary:
+	inferred   1 Counter(s).
+	inferred 257 D-type flip-flop(s).
+Unit <keyexpansion_new> synthesized.
+
+
+Synthesizing Unit <subbyteShiftRow>.
+    Related source file is "subbyteShiftRow.v".
+Unit <subbyteShiftRow> synthesized.
+
+
+Synthesizing Unit <mult>.
+    Related source file is "mult.v".
+    Found 8-bit 4-to-1 multiplexer for signal <out>.
+    Found 8-bit xor2 for signal <out$xor0000> created at line 35.
+    Summary:
+	inferred   8 Multiplexer(s).
+Unit <mult> synthesized.
+
+
+Synthesizing Unit <mixcolum>.
+    Related source file is "mixcolum.v".
+    Found 32-bit xor4 for signal <out>.
+    Summary:
+	inferred  32 Xor(s).
+Unit <mixcolum> synthesized.
+
+
+Synthesizing Unit <main_aes>.
+    Related source file is "main_aes.v".
+    Found 128-bit register for signal <data_out>.
+    Found 2-bit register for signal <rw>.
+    Found 5-bit register for signal <count>.
+    Found 5-bit adder for signal <count$addsub0000> created at line 84.
+    Found 128-bit register for signal <reg1>.
+    Found 128-bit xor2 for signal <reg1$xor0000> created at line 101.
+    Found 128-bit xor2 for signal <reg1$xor0001> created at line 110.
+    Found 128-bit xor2 for signal <reg1$xor0002> created at line 118.
+    Found 128-bit register for signal <reg2>.
+    Found 1-bit register for signal <tick>.
+    Summary:
+	inferred 390 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <main_aes> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 24
+ 256x8-bit ROM                                         : 24
+# Adders/Subtractors                                   : 1
+ 5-bit adder                                           : 1
+# Counters                                             : 1
+ 6-bit up counter                                      : 1
+# Registers                                            : 263
+ 1-bit register                                        : 258
+ 128-bit register                                      : 3
+ 2-bit register                                        : 1
+ 5-bit register                                        : 1
+# Multiplexers                                         : 64
+ 8-bit 4-to-1 multiplexer                              : 64
+# Xors                                                 : 643
+ 1-bit xor2                                            : 448
+ 1-bit xor4                                            : 128
+ 128-bit xor2                                          : 3
+ 8-bit xor2                                            : 64
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <main_aes>.
+INFO:Xst:3044 - The ROM <SR1/s1/Mrom_out> will be implemented as a read-only BLOCK RAM, absorbing the register: <reg1>.
+INFO:Xst:3044 - The ROM <SR1/s0/Mrom_out> will be implemented as a read-only BLOCK RAM, absorbing the register: <reg1>.
+INFO:Xst:3044 - The ROM <SR1/s2/Mrom_out> will be implemented as a read-only BLOCK RAM, absorbing the register: <reg1>.
+INFO:Xst:3044 - The ROM <SR1/s3/Mrom_out> will be implemented as a read-only BLOCK RAM, absorbing the register: <reg1>.
+INFO:Xst:3044 - The ROM <SR1/s4/Mrom_out> will be implemented as a read-only BLOCK RAM, absorbing the register: <reg1>.
+INFO:Xst:3044 - The ROM <SR1/s5/Mrom_out> will be implemented as a read-only BLOCK RAM, absorbing the register: <reg1>.
+INFO:Xst:3044 - The ROM <SR1/s6/Mrom_out> will be implemented as a read-only BLOCK RAM, absorbing the register: <reg1>.
+INFO:Xst:3044 - The ROM <SR1/s7/Mrom_out> will be implemented as a read-only BLOCK RAM, absorbing the register: <reg1>.
+INFO:Xst:3044 - The ROM <SR1/s8/Mrom_out> will be implemented as a read-only BLOCK RAM, absorbing the register: <reg1>.
+INFO:Xst:3044 - The ROM <SR1/s9/Mrom_out> will be implemented as a read-only BLOCK RAM, absorbing the register: <reg1>.
+INFO:Xst:3044 - The ROM <SR1/s10/Mrom_out> will be implemented as a read-only BLOCK RAM, absorbing the register: <reg1>.
+INFO:Xst:3044 - The ROM <SR1/s11/Mrom_out> will be implemented as a read-only BLOCK RAM, absorbing the register: <reg1>.
+INFO:Xst:3044 - The ROM <SR1/s12/Mrom_out> will be implemented as a read-only BLOCK RAM, absorbing the register: <reg1>.
+INFO:Xst:3044 - The ROM <SR1/s13/Mrom_out> will be implemented as a read-only BLOCK RAM, absorbing the register: <reg1>.
+INFO:Xst:3044 - The ROM <SR1/s14/Mrom_out> will be implemented as a read-only BLOCK RAM, absorbing the register: <reg1>.
+INFO:Xst:3044 - The ROM <SR1/s15/Mrom_out> will be implemented as a read-only BLOCK RAM, absorbing the register: <reg1>.
+INFO:Xst:3225 - The RAM <SR1/s1/Mrom_out> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <tick>          | rise     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <SR1/temp>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <SR1/s0/Mrom_out> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <tick>          | rise     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <SR1/temp>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <SR1/s2/Mrom_out> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <tick>          | rise     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <SR1/temp>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <SR1/s3/Mrom_out> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <tick>          | rise     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <SR1/temp>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <SR1/s4/Mrom_out> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <tick>          | rise     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <SR1/temp>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <SR1/s5/Mrom_out> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <tick>          | rise     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <SR1/temp>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <SR1/s6/Mrom_out> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <tick>          | rise     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <SR1/temp>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <SR1/s7/Mrom_out> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <tick>          | rise     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <SR1/temp>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <SR1/s8/Mrom_out> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <tick>          | rise     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <SR1/temp>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <SR1/s9/Mrom_out> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <tick>          | rise     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <SR1/temp>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <SR1/s10/Mrom_out> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <tick>          | rise     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <SR1/temp>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <SR1/s11/Mrom_out> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <tick>          | rise     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <SR1/temp>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <SR1/s12/Mrom_out> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <tick>          | rise     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <SR1/temp>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <SR1/s13/Mrom_out> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <tick>          | rise     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <SR1/temp>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <SR1/s14/Mrom_out> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <tick>          | rise     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <SR1/temp>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <SR1/s15/Mrom_out> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <tick>          | rise     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <SR1/temp>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <main_aes> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 16
+ 256x8-bit single-port block RAM                       : 16
+# ROMs                                                 : 8
+ 256x8-bit ROM                                         : 8
+# Adders/Subtractors                                   : 1
+ 5-bit adder                                           : 1
+# Counters                                             : 1
+ 6-bit up counter                                      : 1
+# Registers                                            : 649
+ Flip-Flops                                            : 649
+# Multiplexers                                         : 64
+ 8-bit 4-to-1 multiplexer                              : 64
+# Xors                                                 : 643
+ 1-bit xor2                                            : 448
+ 1-bit xor4                                            : 128
+ 128-bit xor2                                          : 3
+ 8-bit xor2                                            : 64
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1989 - Unit <mixcolum>: instances <m3>, <m15> of unit <mult> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <mixcolum>: instances <m4>, <m8> of unit <mult> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <mixcolum>: instances <m5>, <m9> of unit <mult> are equivalent, second instance is removed
+WARNING:Xst:1989 - Unit <mixcolum>: instances <m10>, <m14> of unit <mult> are equivalent, second instance is removed
+INFO:Xst:2697 - Unit <main_aes> : the RAMs <SR1/s1/Mrom_out>, <SR1/s3/Mrom_out> are packed into the single block RAM <SR1/s1/Mrom_out1>
+INFO:Xst:2697 - Unit <main_aes> : the RAMs <SR1/s0/Mrom_out>, <SR1/s2/Mrom_out> are packed into the single block RAM <SR1/s0/Mrom_out1>
+INFO:Xst:2697 - Unit <main_aes> : the RAMs <SR1/s6/Mrom_out>, <SR1/s4/Mrom_out> are packed into the single block RAM <SR1/s6/Mrom_out1>
+INFO:Xst:2697 - Unit <main_aes> : the RAMs <SR1/s5/Mrom_out>, <SR1/s9/Mrom_out> are packed into the single block RAM <SR1/s5/Mrom_out1>
+INFO:Xst:2697 - Unit <main_aes> : the RAMs <SR1/s7/Mrom_out>, <SR1/s8/Mrom_out> are packed into the single block RAM <SR1/s7/Mrom_out1>
+INFO:Xst:2697 - Unit <main_aes> : the RAMs <SR1/s12/Mrom_out>, <SR1/s10/Mrom_out> are packed into the single block RAM <SR1/s12/Mrom_out1>
+INFO:Xst:2697 - Unit <main_aes> : the RAMs <SR1/s11/Mrom_out>, <SR1/s15/Mrom_out> are packed into the single block RAM <SR1/s11/Mrom_out1>
+INFO:Xst:2697 - Unit <main_aes> : the RAMs <SR1/s13/Mrom_out>, <SR1/s14/Mrom_out> are packed into the single block RAM <SR1/s13/Mrom_out1>
+
+Optimizing unit <main_aes> ...
+
+Optimizing unit <keyexpansion_new> ...
+
+Optimizing unit <mixcolum> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block main_aes, actual ratio is 33.
+FlipFlop k1/count_0 has been replicated 1 time(s)
+FlipFlop k1/count_1 has been replicated 1 time(s)
+FlipFlop k1/count_3 has been replicated 1 time(s)
+FlipFlop k1/out0_16 has been replicated 2 time(s)
+FlipFlop k1/out0_17 has been replicated 2 time(s)
+FlipFlop k1/out0_18 has been replicated 2 time(s)
+FlipFlop k1/out0_19 has been replicated 2 time(s)
+FlipFlop k1/out0_20 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 667
+ Flip-Flops                                            : 667
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : main_aes.ngr
+Top Level Output File Name         : main_aes
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 777
+
+Cell Usage :
+# BELS                             : 3801
+#      GND                         : 1
+#      INV                         : 3
+#      LUT2                        : 234
+#      LUT2_D                      : 8
+#      LUT2_L                      : 70
+#      LUT3                        : 299
+#      LUT3_D                      : 7
+#      LUT3_L                      : 7
+#      LUT4                        : 1949
+#      LUT4_D                      : 12
+#      LUT4_L                      : 148
+#      MUXF5                       : 642
+#      MUXF6                       : 256
+#      MUXF7                       : 128
+#      MUXF8                       : 36
+#      VCC                         : 1
+# FlipFlops/Latches                : 667
+#      FD                          : 256
+#      FD_1                        : 2
+#      FDC                         : 6
+#      FDC_1                       : 1
+#      FDCE                        : 10
+#      FDE                         : 128
+#      FDE_1                       : 122
+#      FDP                         : 1
+#      FDS_1                       : 141
+# RAMS                             : 8
+#      RAMB16_S9_S9                : 8
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 776
+#      IBUF                        : 257
+#      OBUF                        : 519
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                     1438  out of   4656    30%  
+ Number of Slice Flip Flops:            667  out of   9312     7%  
+ Number of 4 input LUTs:               2737  out of   9312    29%  
+ Number of IOs:                         777
+ Number of bonded IOBs:                 777  out of    232   334% (*) 
+ Number of BRAMs:                         8  out of     20    40%  
+ Number of GCLKs:                         2  out of     24     8%  
+
+WARNING:Xst:1336 -  (*) More than 100% of Device resources are used
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 276   |
+tick1                              | BUFG                   | 399   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+reset                              | IBUF                   | 18    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 7.165ns (Maximum Frequency: 139.567MHz)
+   Minimum input arrival time before clock: 3.984ns
+   Maximum output required time after clock: 5.239ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 7.165ns (frequency: 139.567MHz)
+  Total number of paths / destination ports: 9601 / 548
+-------------------------------------------------------------------------
+Delay:               7.165ns (Levels of Logic = 6)
+  Source:            k1/out0_18_1 (FF)
+  Destination:       k1/out1_126 (FF)
+  Source Clock:      clk falling
+  Destination Clock: clk falling
+
+  Data Path: k1/out0_18_1 to k1/out1_126
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDS_1:C->Q           16   0.591   1.209  k1/out0_18_1 (k1/out0_18_1)
+     LUT4:I0->O            1   0.704   0.000  k1/s13/Mrom_out1216 (k1/s13/Mrom_out1216)
+     MUXF5:I0->O           1   0.321   0.000  k1/s13/Mrom_out12_f5_6 (k1/s13/Mrom_out12_f57)
+     MUXF6:I0->O           1   0.521   0.000  k1/s13/Mrom_out12_f6_2 (k1/s13/Mrom_out12_f63)
+     MUXF7:I0->O           1   0.521   0.455  k1/s13/Mrom_out12_f7_0 (k1/s13/Mrom_out12_f71)
+     LUT4_D:I2->LO         1   0.704   0.104  k1/out1_126_mux000011 (N975)
+     LUT4:I3->O            1   0.704   0.420  k1/out1_126_mux00004 (k1/out1_126_mux00004)
+     FDS_1:S                   0.911          k1/out1_126
+    ----------------------------------------
+    Total                      7.165ns (4.977ns logic, 2.188ns route)
+                                       (69.5% logic, 30.5% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'tick1'
+  Clock period: 6.574ns (frequency: 152.103MHz)
+  Total number of paths / destination ports: 8752 / 647
+-------------------------------------------------------------------------
+Delay:               6.574ns (Levels of Logic = 3)
+  Source:            count_2 (FF)
+  Destination:       reg2_0 (FF)
+  Source Clock:      tick1 rising
+  Destination Clock: tick1 rising
+
+  Data Path: count_2 to reg2_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              9   0.591   0.899  count_2 (count_2)
+     LUT3_D:I1->O        257   0.704   1.368  reg2_or000221 (N140)
+     LUT3_D:I2->O        127   0.704   1.296  reg2_or00021 (reg2_or0002)
+     LUT4:I3->O            1   0.704   0.000  reg2_mux0000<99>1 (reg2_mux0000<99>)
+     FD:D                      0.308          reg2_28
+    ----------------------------------------
+    Total                      6.574ns (3.011ns logic, 3.563ns route)
+                                       (45.8% logic, 54.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'tick1'
+  Total number of paths / destination ports: 128 / 128
+-------------------------------------------------------------------------
+Offset:              2.825ns (Levels of Logic = 2)
+  Source:            data_in<0> (PAD)
+  Destination:       reg2_0 (FF)
+  Destination Clock: tick1 rising
+
+  Data Path: data_in<0> to reg2_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.218   0.595  data_in_0_IBUF (data_in_0_IBUF)
+     LUT4:I0->O            1   0.704   0.000  reg2_mux0000<127>1 (reg2_mux0000<127>)
+     FD:D                      0.308          reg2_0
+    ----------------------------------------
+    Total                      2.825ns (2.230ns logic, 0.595ns route)
+                                       (78.9% logic, 21.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 137 / 137
+-------------------------------------------------------------------------
+Offset:              3.984ns (Levels of Logic = 3)
+  Source:            key_in<0> (PAD)
+  Destination:       k1/out0_0 (FF)
+  Destination Clock: clk falling
+
+  Data Path: key_in<0> to k1/out0_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.218   0.595  key_in_0_IBUF (key_in_0_IBUF)
+     LUT4:I0->O            1   0.704   0.455  k1/out0_0_mux0000291_SW0 (N760)
+     LUT4:I2->O            1   0.704   0.000  k1/out0_0_mux0000291 (k1/out0_0_mux000029)
+     FDS_1:D                   0.308          k1/out0_0
+    ----------------------------------------
+    Total                      3.984ns (2.934ns logic, 1.050ns route)
+                                       (73.6% logic, 26.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'tick1'
+  Total number of paths / destination ports: 263 / 263
+-------------------------------------------------------------------------
+Offset:              5.239ns (Levels of Logic = 1)
+  Source:            count_1 (FF)
+  Destination:       test_state<1> (PAD)
+  Source Clock:      tick1 rising
+
+  Data Path: count_1 to test_state<1>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q            393   0.591   1.376  count_1 (count_1)
+     OBUF:I->O                 3.272          test_state_1_OBUF (test_state<1>)
+    ----------------------------------------
+    Total                      5.239ns (3.863ns logic, 1.376ns route)
+                                       (73.7% logic, 26.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 256 / 256
+-------------------------------------------------------------------------
+Offset:              5.158ns (Levels of Logic = 1)
+  Source:            k1/out0_27 (FF)
+  Destination:       test1<99> (PAD)
+  Source Clock:      clk falling
+
+  Data Path: k1/out0_27 to test1<99>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDS_1:C->Q          135   0.591   1.295  k1/out0_27 (k1/out0_27)
+     OBUF:I->O                 3.272          test1_99_OBUF (test1<99>)
+    ----------------------------------------
+    Total                      5.158ns (3.863ns logic, 1.295ns route)
+                                       (74.9% logic, 25.1% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 83.00 secs
+Total CPU time to Xst completion: 82.66 secs
+ 
+--> 
+
+Total memory usage is 361804 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    5 (   0 filtered)
+Number of infos    :   40 (   0 filtered)
+

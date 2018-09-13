@@ -1,0 +1,1233 @@
+Release 14.2 - xst P.28xd (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Reading design: keyexpansion.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "keyexpansion.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "keyexpansion"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : keyexpansion
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Block
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Block
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "subbyte.v" in library work
+Compiling verilog file "keyexpansion.v" in library work
+Module <subbyte> compiled
+Module <keyexpansion> compiled
+No errors in compilation
+Analysis of file <"keyexpansion.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <keyexpansion> in library <work>.
+
+Analyzing hierarchy for module <subbyte> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <keyexpansion>.
+WARNING:Xst:1643 - "keyexpansion.v" line 53: You are giving the signal x a default value. x already had a default value, which will be overridden by this one.
+WARNING:Xst:905 - "keyexpansion.v" line 69: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <in>, <temp>
+Module <keyexpansion> is correct for synthesis.
+ 
+Analyzing module <subbyte> in library <work>.
+Module <subbyte> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <subbyte>.
+    Related source file is "subbyte.v".
+    Found 256x8-bit ROM for signal <out>.
+    Summary:
+	inferred   1 ROM(s).
+Unit <subbyte> synthesized.
+
+
+Synthesizing Unit <keyexpansion>.
+    Related source file is "keyexpansion.v".
+WARNING:Xst:646 - Signal <x> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 5-bit up counter for signal <count>.
+    Found 1-bit xor2 for signal <out_0$xor0000> created at line 83.
+    Found 1-bit xor2 for signal <out_1$xor0000> created at line 83.
+    Found 1-bit xor2 for signal <out_10$xor0000> created at line 83.
+    Found 1-bit xor2 for signal <out_11$xor0000> created at line 83.
+    Found 1-bit xor2 for signal <out_12$xor0000> created at line 83.
+    Found 1-bit xor2 for signal <out_13$xor0000> created at line 83.
+    Found 1-bit xor2 for signal <out_14$xor0000> created at line 83.
+    Found 1-bit xor2 for signal <out_15$xor0000> created at line 83.
+    Found 1-bit xor2 for signal <out_16$xor0000> created at line 83.
+    Found 1-bit xor2 for signal <out_17$xor0000> created at line 83.
+    Found 1-bit xor2 for signal <out_18$xor0000> created at line 83.
+    Found 1-bit xor2 for signal <out_19$xor0000> created at line 83.
+    Found 1-bit xor2 for signal <out_2$xor0000> created at line 83.
+    Found 1-bit xor2 for signal <out_20$xor0000> created at line 83.
+    Found 1-bit xor2 for signal <out_21$xor0000> created at line 83.
+    Found 1-bit xor2 for signal <out_22$xor0000> created at line 83.
+    Found 1-bit xor2 for signal <out_23$xor0000> created at line 83.
+    Found 1-bit xor2 for signal <out_24$xor0000> created at line 83.
+    Found 1-bit xor2 for signal <out_24$xor0001> created at line 89.
+    Found 1-bit xor2 for signal <out_25$xor0000> created at line 83.
+    Found 1-bit xor2 for signal <out_25$xor0001> created at line 89.
+    Found 1-bit xor2 for signal <out_26$xor0000> created at line 83.
+    Found 1-bit xor2 for signal <out_26$xor0001> created at line 95.
+    Found 1-bit xor2 for signal <out_27$xor0000> created at line 83.
+    Found 1-bit xor2 for signal <out_27$xor0001> created at line 101.
+    Found 1-bit xor2 for signal <out_28$xor0000> created at line 83.
+    Found 1-bit xor2 for signal <out_28$xor0001> created at line 107.
+    Found 1-bit xor2 for signal <out_29$xor0000> created at line 83.
+    Found 1-bit xor2 for signal <out_29$xor0001> created at line 113.
+    Found 1-bit xor2 for signal <out_3$xor0000> created at line 83.
+    Found 1-bit xor2 for signal <out_30$xor0000> created at line 83.
+    Found 1-bit xor2 for signal <out_30$xor0001> created at line 119.
+    Found 1-bit xor2 for signal <out_31$xor0000> created at line 83.
+    Found 1-bit xor2 for signal <out_31$xor0001> created at line 125.
+    Found 1-bit xor2 for signal <out_31_0$xor0000> created at line 82.
+    Found 1-bit xor2 for signal <out_31_0$xor0001> created at line 82.
+    Found 1-bit xor2 for signal <out_31_0$xor0002> created at line 82.
+    Found 1-bit xor2 for signal <out_31_0$xor0003> created at line 82.
+    Found 1-bit xor2 for signal <out_31_0$xor0004> created at line 82.
+    Found 1-bit xor2 for signal <out_31_0$xor0005> created at line 82.
+    Found 1-bit xor2 for signal <out_31_0$xor0006> created at line 82.
+    Found 1-bit xor2 for signal <out_31_0$xor0007> created at line 82.
+    Found 1-bit xor2 for signal <out_31_0$xor0008> created at line 82.
+    Found 1-bit xor2 for signal <out_31_0$xor0009> created at line 82.
+    Found 1-bit xor2 for signal <out_31_0$xor0010> created at line 82.
+    Found 1-bit xor2 for signal <out_31_0$xor0011> created at line 82.
+    Found 1-bit xor2 for signal <out_31_0$xor0012> created at line 82.
+    Found 1-bit xor2 for signal <out_31_0$xor0013> created at line 82.
+    Found 1-bit xor2 for signal <out_31_0$xor0014> created at line 82.
+    Found 1-bit xor2 for signal <out_31_0$xor0015> created at line 82.
+    Found 1-bit xor2 for signal <out_31_0$xor0016> created at line 82.
+    Found 1-bit xor2 for signal <out_31_0$xor0017> created at line 82.
+    Found 1-bit xor2 for signal <out_31_0$xor0018> created at line 82.
+    Found 1-bit xor2 for signal <out_31_0$xor0019> created at line 82.
+    Found 1-bit xor2 for signal <out_31_0$xor0020> created at line 82.
+    Found 1-bit xor2 for signal <out_31_0$xor0021> created at line 82.
+    Found 1-bit xor2 for signal <out_31_0$xor0022> created at line 82.
+    Found 1-bit xor2 for signal <out_31_0$xor0023> created at line 82.
+    Found 1-bit xor2 for signal <out_31_0$xor0024> created at line 82.
+    Found 1-bit xor2 for signal <out_31_0$xor0025> created at line 82.
+    Found 1-bit xor2 for signal <out_31_0$xor0026> created at line 82.
+    Found 1-bit xor2 for signal <out_31_0$xor0027> created at line 82.
+    Found 1-bit xor2 for signal <out_31_0$xor0028> created at line 82.
+    Found 1-bit xor2 for signal <out_31_0$xor0029> created at line 82.
+    Found 1-bit xor2 for signal <out_31_0$xor0030> created at line 82.
+    Found 1-bit xor2 for signal <out_31_0$xor0031> created at line 82.
+    Found 1-bit xor2 for signal <out_31_0$xor0032> created at line 88.
+    Found 1-bit xor2 for signal <out_31_0$xor0033> created at line 88.
+    Found 1-bit xor2 for signal <out_31_0$xor0034> created at line 94.
+    Found 1-bit xor2 for signal <out_31_0$xor0035> created at line 100.
+    Found 1-bit xor2 for signal <out_31_0$xor0036> created at line 106.
+    Found 1-bit xor2 for signal <out_31_0$xor0037> created at line 112.
+    Found 1-bit xor2 for signal <out_31_0$xor0038> created at line 118.
+    Found 1-bit xor2 for signal <out_31_0$xor0039> created at line 124.
+    Found 1-bit xor2 for signal <out_4$xor0000> created at line 83.
+    Found 1-bit xor2 for signal <out_5$xor0000> created at line 83.
+    Found 1-bit xor2 for signal <out_6$xor0000> created at line 83.
+    Found 1-bit xor2 for signal <out_63_32$xor0000> created at line 81.
+    Found 1-bit xor2 for signal <out_63_32$xor0001> created at line 81.
+    Found 1-bit xor2 for signal <out_63_32$xor0002> created at line 81.
+    Found 1-bit xor2 for signal <out_63_32$xor0003> created at line 81.
+    Found 1-bit xor2 for signal <out_63_32$xor0004> created at line 81.
+    Found 1-bit xor2 for signal <out_63_32$xor0005> created at line 81.
+    Found 1-bit xor2 for signal <out_63_32$xor0006> created at line 81.
+    Found 1-bit xor2 for signal <out_63_32$xor0007> created at line 81.
+    Found 1-bit xor2 for signal <out_63_32$xor0008> created at line 81.
+    Found 1-bit xor2 for signal <out_63_32$xor0009> created at line 81.
+    Found 1-bit xor2 for signal <out_63_32$xor0010> created at line 81.
+    Found 1-bit xor2 for signal <out_63_32$xor0011> created at line 81.
+    Found 1-bit xor2 for signal <out_63_32$xor0012> created at line 81.
+    Found 1-bit xor2 for signal <out_63_32$xor0013> created at line 81.
+    Found 1-bit xor2 for signal <out_63_32$xor0014> created at line 81.
+    Found 1-bit xor2 for signal <out_63_32$xor0015> created at line 81.
+    Found 1-bit xor2 for signal <out_63_32$xor0016> created at line 81.
+    Found 1-bit xor2 for signal <out_63_32$xor0017> created at line 81.
+    Found 1-bit xor2 for signal <out_63_32$xor0018> created at line 81.
+    Found 1-bit xor2 for signal <out_63_32$xor0019> created at line 81.
+    Found 1-bit xor2 for signal <out_63_32$xor0020> created at line 81.
+    Found 1-bit xor2 for signal <out_63_32$xor0021> created at line 81.
+    Found 1-bit xor2 for signal <out_63_32$xor0022> created at line 81.
+    Found 1-bit xor2 for signal <out_63_32$xor0023> created at line 81.
+    Found 1-bit xor2 for signal <out_63_32$xor0024> created at line 81.
+    Found 1-bit xor2 for signal <out_63_32$xor0025> created at line 81.
+    Found 1-bit xor2 for signal <out_63_32$xor0026> created at line 81.
+    Found 1-bit xor2 for signal <out_63_32$xor0027> created at line 81.
+    Found 1-bit xor2 for signal <out_63_32$xor0028> created at line 81.
+    Found 1-bit xor2 for signal <out_63_32$xor0029> created at line 81.
+    Found 1-bit xor2 for signal <out_63_32$xor0030> created at line 81.
+    Found 1-bit xor2 for signal <out_63_32$xor0031> created at line 81.
+    Found 1-bit xor2 for signal <out_63_32$xor0032> created at line 87.
+    Found 1-bit xor2 for signal <out_63_32$xor0033> created at line 87.
+    Found 1-bit xor2 for signal <out_63_32$xor0034> created at line 93.
+    Found 1-bit xor2 for signal <out_63_32$xor0035> created at line 99.
+    Found 1-bit xor2 for signal <out_63_32$xor0036> created at line 105.
+    Found 1-bit xor2 for signal <out_63_32$xor0037> created at line 111.
+    Found 1-bit xor2 for signal <out_63_32$xor0038> created at line 117.
+    Found 1-bit xor2 for signal <out_63_32$xor0039> created at line 123.
+    Found 1-bit xor2 for signal <out_7$xor0000> created at line 83.
+    Found 1-bit xor2 for signal <out_8$xor0000> created at line 83.
+    Found 1-bit xor2 for signal <out_9$xor0000> created at line 83.
+    Found 1-bit xor2 for signal <out_95_64$xor0000> created at line 80.
+    Found 1-bit xor2 for signal <out_95_64$xor0001> created at line 80.
+    Found 1-bit xor2 for signal <out_95_64$xor0002> created at line 80.
+    Found 1-bit xor2 for signal <out_95_64$xor0003> created at line 80.
+    Found 1-bit xor2 for signal <out_95_64$xor0004> created at line 80.
+    Found 1-bit xor2 for signal <out_95_64$xor0005> created at line 80.
+    Found 1-bit xor2 for signal <out_95_64$xor0006> created at line 80.
+    Found 1-bit xor2 for signal <out_95_64$xor0008> created at line 80.
+    Found 1-bit xor2 for signal <out_95_64$xor0009> created at line 80.
+    Found 1-bit xor2 for signal <out_95_64$xor0010> created at line 80.
+    Found 1-bit xor2 for signal <out_95_64$xor0011> created at line 80.
+    Found 1-bit xor2 for signal <out_95_64$xor0012> created at line 80.
+    Found 1-bit xor2 for signal <out_95_64$xor0013> created at line 80.
+    Found 1-bit xor2 for signal <out_95_64$xor0014> created at line 80.
+    Found 1-bit xor2 for signal <out_95_64$xor0015> created at line 80.
+    Found 1-bit xor2 for signal <out_95_64$xor0016> created at line 80.
+    Found 1-bit xor2 for signal <out_95_64$xor0017> created at line 80.
+    Found 1-bit xor2 for signal <out_95_64$xor0018> created at line 80.
+    Found 1-bit xor2 for signal <out_95_64$xor0019> created at line 80.
+    Found 1-bit xor2 for signal <out_95_64$xor0020> created at line 80.
+    Found 1-bit xor2 for signal <out_95_64$xor0021> created at line 80.
+    Found 1-bit xor2 for signal <out_95_64$xor0022> created at line 80.
+    Found 1-bit xor2 for signal <out_95_64$xor0023> created at line 80.
+    Found 1-bit xor2 for signal <out_95_64$xor0024> created at line 80.
+    Found 1-bit xor2 for signal <out_95_64$xor0025> created at line 80.
+    Found 1-bit xor2 for signal <out_95_64$xor0026> created at line 80.
+    Found 1-bit xor2 for signal <out_95_64$xor0027> created at line 80.
+    Found 1-bit xor2 for signal <out_95_64$xor0028> created at line 80.
+    Found 1-bit xor2 for signal <out_95_64$xor0029> created at line 80.
+    Found 1-bit xor2 for signal <out_95_64$xor0030> created at line 80.
+    Found 1-bit xor2 for signal <out_95_64$xor0031> created at line 80.
+    Found 1-bit xor2 for signal <out_95_64$xor0033> created at line 86.
+    Summary:
+	inferred   1 Counter(s).
+Unit <keyexpansion> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 4
+ 256x8-bit ROM                                         : 4
+# Counters                                             : 1
+ 5-bit up counter                                      : 1
+# Xors                                                 : 152
+ 1-bit xor2                                            : 152
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 4
+ 256x8-bit ROM                                         : 4
+# Counters                                             : 1
+ 5-bit up counter                                      : 1
+# Xors                                                 : 152
+ 1-bit xor2                                            : 152
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<127>, out_95_64_xor0000.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<126>, out_95_64_xor0001.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<125>, out_95_64_xor0002.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<124>, out_95_64_xor0003.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<123>, out_95_64_xor0004.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_95_64_xor0005, round_key<122>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_95_64_xor0006, round_key<121>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<120>, out_95_64_xor0033.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<119>, out_95_64_xor0008.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<118>, out_95_64_xor0009.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<117>, out_95_64_xor0010.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_95_64_xor0011, round_key<116>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_95_64_xor0012, round_key<115>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<114>, out_95_64_xor0013.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<113>, out_95_64_xor0014.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<112>, out_95_64_xor0015.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_95_64_xor0016, round_key<111>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_95_64_xor0017, round_key<110>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_95_64_xor0018, round_key<109>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<108>, out_95_64_xor0019.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<107>, out_95_64_xor0020.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_95_64_xor0021, round_key<106>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_95_64_xor0022, round_key<105>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_95_64_xor0023, round_key<104>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<103>, out_95_64_xor0024.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<102>, out_95_64_xor0025.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_95_64_xor0026, round_key<101>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<100>, out_95_64_xor0027.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<99>, out_95_64_xor0028.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<98>, out_95_64_xor0029.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<97>, out_95_64_xor0030.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_95_64_xor0031, round_key<96>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<95>, out_63_32_xor0000.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_63_32_xor0001, round_key<94>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_63_32_xor0002, round_key<93>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_63_32_xor0003, round_key<92>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_63_32_xor0004, round_key<91>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_63_32_xor0005, round_key<90>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<89>, out_63_32_xor0006.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<88>, out_63_32_xor0007.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<87>, out_63_32_xor0008.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_63_32_xor0009, round_key<86>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_63_32_xor0010, round_key<85>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_63_32_xor0011, round_key<84>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<83>, out_63_32_xor0012.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<82>, out_63_32_xor0013.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_63_32_xor0014, round_key<81>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_63_32_xor0015, round_key<80>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_63_32_xor0016, round_key<79>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<78>, out_63_32_xor0017.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<77>, out_63_32_xor0018.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<76>, out_63_32_xor0019.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_63_32_xor0020, round_key<75>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_63_32_xor0021, round_key<74>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<73>, out_63_32_xor0022.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_63_32_xor0023, round_key<72>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<71>, out_63_32_xor0024.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<70>, out_63_32_xor0025.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<69>, out_63_32_xor0026.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_63_32_xor0027, round_key<68>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_63_32_xor0028, round_key<67>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<66>, out_63_32_xor0029.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<65>, out_63_32_xor0030.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<64>, out_63_32_xor0031.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<63>, out_31_0_xor0000.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<62>, out_31_0_xor0001.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_31_0_xor0002, round_key<61>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_31_0_xor0003, round_key<60>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<59>, out_31_0_xor0004.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<58>, out_31_0_xor0005.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_31_0_xor0006, round_key<57>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<56>, out_31_0_xor0007.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_31_0_xor0008, round_key<55>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_31_0_xor0009, round_key<54>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<53>, out_31_0_xor0010.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<52>, out_31_0_xor0011.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<51>, out_31_0_xor0012.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_31_0_xor0013, round_key<50>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_31_0_xor0014, round_key<49>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_31_0_xor0015, round_key<48>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<47>, out_31_0_xor0016.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<46>, out_31_0_xor0017.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_31_0_xor0018, round_key<45>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<44>, out_31_0_xor0019.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<43>, out_31_0_xor0020.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_31_0_xor0021, round_key<42>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<41>, out_31_0_xor0022.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<40>, out_31_0_xor0023.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<39>, out_31_0_xor0024.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<38>, out_31_0_xor0025.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_31_0_xor0026, round_key<37>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_31_0_xor0027, round_key<36>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<35>, out_31_0_xor0028.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<34>, out_31_0_xor0029.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<33>, out_31_0_xor0030.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: out_31_0_xor0031, round_key<32>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<5>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<11>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<17>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<23>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<29>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<4>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<10>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<16>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<22>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<28>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<3>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<9>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<15>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<21>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<27>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<2>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<8>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<14>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<20>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<26>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<1>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<7>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<13>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<19>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<25>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<31>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<0>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<6>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<12>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<18>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<24>.
+WARNING:Xst:2170 - Unit keyexpansion : the following signal(s) form a combinatorial loop: round_key<30>.
+
+Optimizing unit <keyexpansion> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block keyexpansion, actual ratio is 8.
+FlipFlop count_1 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 6
+ Flip-Flops                                            : 6
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : keyexpansion.ngr
+Top Level Output File Name         : keyexpansion
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 258
+
+Cell Usage :
+# BELS                             : 1291
+#      INV                         : 1
+#      LUT2                        : 3
+#      LUT2_L                      : 1
+#      LUT3                        : 47
+#      LUT3_L                      : 1
+#      LUT4                        : 734
+#      MUXF5                       : 280
+#      MUXF6                       : 128
+#      MUXF7                       : 64
+#      MUXF8                       : 32
+# FlipFlops/Latches                : 6
+#      FDCE                        : 6
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 257
+#      IBUF                        : 129
+#      OBUF                        : 128
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                      410  out of   4656     8%  
+ Number of Slice Flip Flops:              6  out of   9312     0%  
+ Number of 4 input LUTs:                787  out of   9312     8%  
+ Number of IOs:                         258
+ Number of bonded IOBs:                 258  out of    232   111% (*) 
+ Number of GCLKs:                         1  out of     24     4%  
+
+WARNING:Xst:1336 -  (*) More than 100% of Device resources are used
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 6     |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+reset                              | IBUF                   | 6     |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 4.075ns (Maximum Frequency: 245.399MHz)
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: 304.245ns
+   Maximum combinational path delay: 303.646ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 4.075ns (frequency: 245.399MHz)
+  Total number of paths / destination ports: 47 / 12
+-------------------------------------------------------------------------
+Delay:               4.075ns (Levels of Logic = 2)
+  Source:            count_0 (FF)
+  Destination:       count_0 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: count_0 to count_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             6   0.591   0.748  count_0 (count_0)
+     LUT2_L:I1->LO         1   0.704   0.104  count_not0000_SW0 (N53)
+     LUT4:I3->O            6   0.704   0.669  count_not0000 (count_not0000)
+     FDCE:CE                   0.555          count_0
+    ----------------------------------------
+    Total                      4.075ns (2.554ns logic, 1.521ns route)
+                                       (62.7% logic, 37.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 4714676609841077100000000000000000000000000000000000 / 128
+-------------------------------------------------------------------------
+Offset:              304.245ns (Levels of Logic = 283)
+  Source:            count_3 (FF)
+  Destination:       round_key<127> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: count_3 to round_key<127>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q            37   0.591   1.439  count_3 (count_3)
+     LUT4:I0->O            4   0.704   0.666  out_127_or00021 (out_127_or0002)
+     LUT4:I1->O            2   0.704   0.622  out_95_mux0000 (round_key_95_OBUF)
+     LUT3:I0->O            5   0.704   0.712  Mxor_out_63_32_xor0039_Result1 (out_63_32_xor0039)
+     LUT4:I1->O            5   0.704   0.712  out_63_mux0000 (round_key_63_OBUF)
+     LUT3:I1->O            1   0.704   0.455  out_31_mux000016 (out_31_mux000016)
+     LUT4:I2->O           12   0.704   0.961  out_31_mux0000119 (round_key_31_OBUF)
+     MUXF8:S->O            3   0.850   0.566  s12/Mrom_out14_f8 (s12/Mrom_out14_f8)
+     LUT4:I2->O            5   0.704   0.712  out_103_mux00001 (round_key_103_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_71_mux00001 (out_71_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_71_mux0000_f5 (round_key_71_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0024_Result1 (out_31_0_xor0024)
+     LUT4:I1->O           10   0.704   0.882  out_7_mux00001 (round_key_7_OBUF)
+     MUXF8:S->O            3   0.850   0.566  s15/Mrom_out2_f8 (s15/Mrom_out2_f8)
+     LUT4:I2->O            5   0.704   0.712  out_105_mux00001 (round_key_105_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_73_mux00001 (out_73_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_73_mux0000_f5 (round_key_73_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0022_Result1 (out_31_0_xor0022)
+     LUT4:I1->O           10   0.704   0.882  out_9_mux00001 (round_key_9_OBUF)
+     MUXF8:S->O            3   0.850   0.566  s14/Mrom_out14_f8 (s14/Mrom_out14_f8)
+     LUT4:I2->O            5   0.704   0.712  out_119_mux00001 (round_key_119_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_87_mux00001 (out_87_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_87_mux0000_f5 (round_key_87_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0008_Result1 (out_31_0_xor0008)
+     LUT4:I1->O           10   0.704   0.882  out_23_mux00001 (round_key_23_OBUF)
+     MUXF8:S->O            2   0.850   0.526  s13/Mrom_out12_f8 (s13/Mrom_out12_f8)
+     LUT4:I1->O            3   0.704   0.566  out_126_mux0000 (round_key_126_OBUF)
+     LUT3:I2->O            4   0.704   0.666  Mxor_out_63_32_xor0038_Result1 (out_63_32_xor0038)
+     LUT4:I1->O            4   0.704   0.666  out_62_mux0000 (round_key_62_OBUF)
+     LUT4:I1->O            1   0.704   0.499  out_30_mux000056 (out_30_mux000056)
+     LUT3:I1->O           19   0.704   1.085  out_30_mux0000138 (round_key_30_OBUF)
+     MUXF7:S->O            1   0.850   0.000  s12/Mrom_out12_f7 (s12/Mrom_out12_f7)
+     MUXF8:I1->O           3   0.521   0.566  s12/Mrom_out12_f8 (s12/Mrom_out12_f8)
+     LUT4:I2->O            5   0.704   0.712  out_102_mux00001 (round_key_102_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_70_mux00001 (out_70_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_70_mux0000_f5 (round_key_70_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0025_Result1 (out_31_0_xor0025)
+     LUT4:I1->O           18   0.704   1.068  out_6_mux00001 (round_key_6_OBUF)
+     MUXF7:S->O            1   0.850   0.000  s15/Mrom_out_f7 (s15/Mrom_out_f7)
+     MUXF8:I1->O           3   0.521   0.566  s15/Mrom_out_f8 (s15/Mrom_out16)
+     LUT4:I2->O            5   0.704   0.712  out_104_mux00001 (round_key_104_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_72_mux00001 (out_72_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_72_mux0000_f5 (round_key_72_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0023_Result1 (out_31_0_xor0023)
+     LUT4:I1->O           18   0.704   1.068  out_8_mux00001 (round_key_8_OBUF)
+     MUXF7:S->O            1   0.850   0.000  s14/Mrom_out12_f7 (s14/Mrom_out12_f7)
+     MUXF8:I1->O           3   0.521   0.566  s14/Mrom_out12_f8 (s14/Mrom_out12_f8)
+     LUT4:I2->O            5   0.704   0.712  out_118_mux00001 (round_key_118_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_86_mux00001 (out_86_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_86_mux0000_f5 (round_key_86_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0009_Result1 (out_31_0_xor0009)
+     LUT4:I1->O           18   0.704   1.068  out_22_mux00001 (round_key_22_OBUF)
+     MUXF7:S->O            1   0.850   0.000  s13/Mrom_out10_f7 (s13/Mrom_out10_f7)
+     MUXF8:I1->O           2   0.521   0.526  s13/Mrom_out10_f8 (s13/Mrom_out10_f8)
+     LUT4:I1->O            3   0.704   0.566  out_125_mux0000 (round_key_125_OBUF)
+     LUT3:I2->O            4   0.704   0.666  Mxor_out_63_32_xor0037_Result1 (out_63_32_xor0037)
+     LUT4:I1->O            4   0.704   0.666  out_61_mux0000 (round_key_61_OBUF)
+     LUT4:I1->O            1   0.704   0.499  out_29_mux000056 (out_29_mux000056)
+     LUT3:I1->O           35   0.704   1.263  out_29_mux0000138 (round_key_29_OBUF)
+     MUXF6:S->O            1   0.850   0.000  s12/Mrom_out10_f6 (s12/Mrom_out10_f6)
+     MUXF7:I1->O           1   0.521   0.000  s12/Mrom_out10_f7 (s12/Mrom_out10_f7)
+     MUXF8:I1->O           3   0.521   0.566  s12/Mrom_out10_f8 (s12/Mrom_out10_f8)
+     LUT4:I2->O            5   0.704   0.712  out_101_mux00001 (round_key_101_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_69_mux00001 (out_69_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_69_mux0000_f5 (round_key_69_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0026_Result1 (out_31_0_xor0026)
+     LUT4:I1->O           34   0.704   1.263  out_5_mux00001 (round_key_5_OBUF)
+     MUXF6:S->O            1   0.850   0.000  s15/Mrom_out14_f6 (s15/Mrom_out14_f6)
+     MUXF7:I1->O           1   0.521   0.000  s15/Mrom_out14_f7 (s15/Mrom_out14_f7)
+     MUXF8:I1->O           3   0.521   0.566  s15/Mrom_out14_f8 (s15/Mrom_out14_f8)
+     LUT4:I2->O            5   0.704   0.712  out_111_mux00001 (round_key_111_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_79_mux00001 (out_79_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_79_mux0000_f5 (round_key_79_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0016_Result1 (out_31_0_xor0016)
+     LUT4:I1->O           34   0.704   1.263  out_15_mux00001 (round_key_15_OBUF)
+     MUXF6:S->O            1   0.850   0.000  s14/Mrom_out10_f6 (s14/Mrom_out10_f6)
+     MUXF7:I1->O           1   0.521   0.000  s14/Mrom_out10_f7 (s14/Mrom_out10_f7)
+     MUXF8:I1->O           3   0.521   0.566  s14/Mrom_out10_f8 (s14/Mrom_out10_f8)
+     LUT4:I2->O            5   0.704   0.712  out_117_mux00001 (round_key_117_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_85_mux00001 (out_85_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_85_mux0000_f5 (round_key_85_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0010_Result1 (out_31_0_xor0010)
+     LUT4:I1->O           34   0.704   1.263  out_21_mux00001 (round_key_21_OBUF)
+     MUXF6:S->O            1   0.850   0.000  s13/Mrom_out8_f6 (s13/Mrom_out8_f6)
+     MUXF7:I1->O           1   0.521   0.000  s13/Mrom_out8_f7 (s13/Mrom_out8_f7)
+     MUXF8:I1->O           2   0.521   0.526  s13/Mrom_out8_f8 (s13/Mrom_out8_f8)
+     LUT4:I1->O            3   0.704   0.566  out_124_mux0000 (round_key_124_OBUF)
+     LUT3:I2->O            4   0.704   0.666  Mxor_out_63_32_xor0036_Result1 (out_63_32_xor0036)
+     LUT4:I1->O            4   0.704   0.666  out_60_mux0000 (round_key_60_OBUF)
+     LUT4:I1->O            1   0.704   0.499  out_28_mux000056 (out_28_mux000056)
+     LUT3:I1->O           67   0.704   1.273  out_28_mux0000138 (round_key_28_OBUF)
+     MUXF5:S->O            1   0.739   0.000  s12/Mrom_out8_f5 (s12/Mrom_out8_f5)
+     MUXF6:I1->O           1   0.521   0.000  s12/Mrom_out8_f6 (s12/Mrom_out8_f6)
+     MUXF7:I1->O           1   0.521   0.000  s12/Mrom_out8_f7 (s12/Mrom_out8_f7)
+     MUXF8:I1->O           3   0.521   0.566  s12/Mrom_out8_f8 (s12/Mrom_out8_f8)
+     LUT4:I2->O            5   0.704   0.712  out_100_mux00001 (round_key_100_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_68_mux00001 (out_68_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_68_mux0000_f5 (round_key_68_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0027_Result1 (out_31_0_xor0027)
+     LUT4:I1->O           66   0.704   1.273  out_4_mux00001 (round_key_4_OBUF)
+     MUXF5:S->O            1   0.739   0.000  s15/Mrom_out12_f5 (s15/Mrom_out12_f5)
+     MUXF6:I1->O           1   0.521   0.000  s15/Mrom_out12_f6 (s15/Mrom_out12_f6)
+     MUXF7:I1->O           1   0.521   0.000  s15/Mrom_out12_f7 (s15/Mrom_out12_f7)
+     MUXF8:I1->O           3   0.521   0.566  s15/Mrom_out12_f8 (s15/Mrom_out12_f8)
+     LUT4:I2->O            5   0.704   0.712  out_110_mux00001 (round_key_110_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_78_mux00001 (out_78_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_78_mux0000_f5 (round_key_78_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0017_Result1 (out_31_0_xor0017)
+     LUT4:I1->O           66   0.704   1.273  out_14_mux00001 (round_key_14_OBUF)
+     MUXF5:S->O            1   0.739   0.000  s14/Mrom_out8_f5 (s14/Mrom_out8_f5)
+     MUXF6:I1->O           1   0.521   0.000  s14/Mrom_out8_f6 (s14/Mrom_out8_f6)
+     MUXF7:I1->O           1   0.521   0.000  s14/Mrom_out8_f7 (s14/Mrom_out8_f7)
+     MUXF8:I1->O           3   0.521   0.566  s14/Mrom_out8_f8 (s14/Mrom_out8_f8)
+     LUT4:I2->O            5   0.704   0.712  out_116_mux00001 (round_key_116_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_84_mux00001 (out_84_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_84_mux0000_f5 (round_key_84_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0011_Result1 (out_31_0_xor0011)
+     LUT4:I1->O           66   0.704   1.273  out_20_mux00001 (round_key_20_OBUF)
+     MUXF5:S->O            1   0.739   0.000  s13/Mrom_out6_f5 (s13/Mrom_out6_f5)
+     MUXF6:I1->O           1   0.521   0.000  s13/Mrom_out6_f6 (s13/Mrom_out6_f6)
+     MUXF7:I1->O           1   0.521   0.000  s13/Mrom_out6_f7 (s13/Mrom_out6_f7)
+     MUXF8:I1->O           2   0.521   0.526  s13/Mrom_out6_f8 (s13/Mrom_out6_f8)
+     LUT4:I1->O            3   0.704   0.566  out_123_mux0000 (round_key_123_OBUF)
+     LUT3:I2->O            4   0.704   0.666  Mxor_out_63_32_xor0035_Result1 (out_63_32_xor0035)
+     LUT4:I1->O            4   0.704   0.666  out_59_mux0000 (round_key_59_OBUF)
+     LUT4:I1->O            1   0.704   0.499  out_27_mux000056 (out_27_mux000056)
+     LUT3:I1->O          131   0.704   1.468  out_27_mux0000138 (round_key_27_OBUF)
+     LUT4:I0->O            1   0.704   0.000  s12/Mrom_out64 (s12/Mrom_out64)
+     MUXF5:I0->O           1   0.321   0.000  s12/Mrom_out6_f5_0 (s12/Mrom_out6_f51)
+     MUXF6:I0->O           1   0.521   0.000  s12/Mrom_out6_f6 (s12/Mrom_out6_f6)
+     MUXF7:I1->O           1   0.521   0.000  s12/Mrom_out6_f7 (s12/Mrom_out6_f7)
+     MUXF8:I1->O           3   0.521   0.566  s12/Mrom_out6_f8 (s12/Mrom_out6_f8)
+     LUT4:I2->O            5   0.704   0.712  out_99_mux00001 (round_key_99_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_67_mux00001 (out_67_mux0000)
+     MUXF5:I1->O           4   0.321   0.591  out_67_mux0000_f5 (round_key_67_OBUF)
+     LUT4:I3->O            2   0.704   0.526  Mxor_out_31_0_xor0028_Result1 (out_31_0_xor0028)
+     LUT4:I1->O          130   0.704   1.468  out_3_mux00001 (round_key_3_OBUF)
+     LUT4:I0->O            1   0.704   0.000  s15/Mrom_out811 (s15/Mrom_out811)
+     MUXF5:I1->O           1   0.321   0.000  s15/Mrom_out8_f5_4 (s15/Mrom_out8_f55)
+     MUXF6:I0->O           1   0.521   0.000  s15/Mrom_out8_f6_1 (s15/Mrom_out8_f62)
+     MUXF7:I1->O           1   0.521   0.000  s15/Mrom_out8_f7_0 (s15/Mrom_out8_f71)
+     MUXF8:I0->O           3   0.521   0.566  s15/Mrom_out8_f8 (s15/Mrom_out8_f8)
+     LUT4:I2->O            5   0.704   0.712  out_108_mux00001 (round_key_108_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_76_mux00001 (out_76_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_76_mux0000_f5 (round_key_76_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0019_Result1 (out_31_0_xor0019)
+     LUT4:I1->O          128   0.704   1.468  out_12_mux00001 (round_key_12_OBUF)
+     LUT4:I0->O            1   0.704   0.000  s14/Mrom_out66 (s14/Mrom_out66)
+     MUXF5:I0->O           1   0.321   0.000  s14/Mrom_out6_f5_1 (s14/Mrom_out6_f52)
+     MUXF6:I1->O           1   0.521   0.000  s14/Mrom_out6_f6_0 (s14/Mrom_out6_f61)
+     MUXF7:I0->O           1   0.521   0.000  s14/Mrom_out6_f7 (s14/Mrom_out6_f7)
+     MUXF8:I1->O           3   0.521   0.566  s14/Mrom_out6_f8 (s14/Mrom_out6_f8)
+     LUT4:I2->O            5   0.704   0.712  out_115_mux00001 (round_key_115_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_83_mux00001 (out_83_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_83_mux0000_f5 (round_key_83_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0012_Result1 (out_31_0_xor0012)
+     LUT4:I1->O          130   0.704   1.468  out_19_mux00001 (round_key_19_OBUF)
+     LUT4:I0->O            1   0.704   0.000  s13/Mrom_out48 (s13/Mrom_out48)
+     MUXF5:I0->O           1   0.321   0.000  s13/Mrom_out4_f5_2 (s13/Mrom_out4_f53)
+     MUXF6:I0->O           1   0.521   0.000  s13/Mrom_out4_f6_0 (s13/Mrom_out4_f61)
+     MUXF7:I0->O           1   0.521   0.000  s13/Mrom_out4_f7 (s13/Mrom_out4_f7)
+     MUXF8:I1->O           2   0.521   0.526  s13/Mrom_out4_f8 (s13/Mrom_out4_f8)
+     LUT4:I1->O            3   0.704   0.566  out_122_mux0000 (round_key_122_OBUF)
+     LUT3:I2->O            4   0.704   0.666  Mxor_out_63_32_xor0034_Result1 (out_63_32_xor0034)
+     LUT4:I1->O            4   0.704   0.666  out_58_mux0000 (round_key_58_OBUF)
+     LUT4:I1->O            1   0.704   0.499  out_26_mux000056 (out_26_mux000056)
+     LUT3:I1->O          131   0.704   1.468  out_26_mux0000138 (round_key_26_OBUF)
+     LUT4:I0->O            1   0.704   0.000  s12/Mrom_out44 (s12/Mrom_out44)
+     MUXF5:I0->O           1   0.321   0.000  s12/Mrom_out4_f5_0 (s12/Mrom_out4_f51)
+     MUXF6:I0->O           1   0.521   0.000  s12/Mrom_out4_f6 (s12/Mrom_out4_f6)
+     MUXF7:I1->O           1   0.521   0.000  s12/Mrom_out4_f7 (s12/Mrom_out4_f7)
+     MUXF8:I1->O           3   0.521   0.566  s12/Mrom_out4_f8 (s12/Mrom_out4_f8)
+     LUT4:I2->O            5   0.704   0.712  out_98_mux00001 (round_key_98_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_66_mux00001 (out_66_mux0000)
+     MUXF5:I1->O           4   0.321   0.591  out_66_mux0000_f5 (round_key_66_OBUF)
+     LUT4:I3->O            2   0.704   0.526  Mxor_out_31_0_xor0029_Result1 (out_31_0_xor0029)
+     LUT4:I1->O          130   0.704   1.372  out_2_mux00001 (round_key_2_OBUF)
+     LUT4:I1->O            1   0.704   0.000  s15/Mrom_out64 (s15/Mrom_out64)
+     MUXF5:I0->O           1   0.321   0.000  s15/Mrom_out6_f5_0 (s15/Mrom_out6_f51)
+     MUXF6:I0->O           1   0.521   0.000  s15/Mrom_out6_f6 (s15/Mrom_out6_f6)
+     MUXF7:I1->O           1   0.521   0.000  s15/Mrom_out6_f7 (s15/Mrom_out6_f7)
+     MUXF8:I1->O           3   0.521   0.566  s15/Mrom_out6_f8 (s15/Mrom_out6_f8)
+     LUT4:I2->O            5   0.704   0.712  out_107_mux00001 (round_key_107_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_75_mux00001 (out_75_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_75_mux0000_f5 (round_key_75_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0020_Result1 (out_31_0_xor0020)
+     LUT4:I1->O          130   0.704   1.468  out_11_mux00001 (round_key_11_OBUF)
+     LUT4:I0->O            1   0.704   0.000  s14/Mrom_out4 (s14/Mrom_out3)
+     MUXF5:I0->O           1   0.321   0.000  s14/Mrom_out_f5_0 (s14/Mrom_out_f51)
+     MUXF6:I0->O           1   0.521   0.000  s14/Mrom_out_f6 (s14/Mrom_out_f6)
+     MUXF7:I1->O           1   0.521   0.000  s14/Mrom_out_f7 (s14/Mrom_out_f7)
+     MUXF8:I1->O           3   0.521   0.566  s14/Mrom_out_f8 (s14/Mrom_out16)
+     LUT4:I2->O            5   0.704   0.712  out_112_mux00001 (round_key_112_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_80_mux00001 (out_80_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_80_mux0000_f5 (round_key_80_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0015_Result1 (out_31_0_xor0015)
+     LUT4:I1->O          130   0.704   1.468  out_16_mux00001 (round_key_16_OBUF)
+     LUT4:I0->O            1   0.704   0.000  s13/Mrom_out21 (s13/Mrom_out21)
+     MUXF5:I1->O           1   0.321   0.000  s13/Mrom_out2_f5 (s13/Mrom_out2_f5)
+     MUXF6:I1->O           1   0.521   0.000  s13/Mrom_out2_f6 (s13/Mrom_out2_f6)
+     MUXF7:I1->O           1   0.521   0.000  s13/Mrom_out2_f7 (s13/Mrom_out2_f7)
+     MUXF8:I1->O           2   0.521   0.526  s13/Mrom_out2_f8 (s13/Mrom_out2_f8)
+     LUT4:I1->O            3   0.704   0.566  out_121_mux0000 (round_key_121_OBUF)
+     LUT3:I2->O            4   0.704   0.666  Mxor_out_63_32_xor0032_Result1 (out_63_32_xor0032)
+     LUT4:I1->O            4   0.704   0.666  out_57_mux0000 (round_key_57_OBUF)
+     LUT4:I1->O            1   0.704   0.499  out_25_mux000056 (out_25_mux000056)
+     LUT3:I1->O          131   0.704   1.468  out_25_mux0000138 (round_key_25_OBUF)
+     LUT4:I0->O            1   0.704   0.000  s12/Mrom_out2 (s12/Mrom_out1)
+     MUXF5:I0->O           1   0.321   0.000  s12/Mrom_out_f5 (s12/Mrom_out_f5)
+     MUXF6:I1->O           1   0.521   0.000  s12/Mrom_out_f6 (s12/Mrom_out_f6)
+     MUXF7:I1->O           1   0.521   0.000  s12/Mrom_out_f7 (s12/Mrom_out_f7)
+     MUXF8:I1->O           3   0.521   0.566  s12/Mrom_out_f8 (s12/Mrom_out16)
+     LUT4:I2->O            5   0.704   0.712  out_96_mux00001 (round_key_96_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_64_mux00001 (out_64_mux0000)
+     MUXF5:I1->O           4   0.321   0.591  out_64_mux0000_f5 (round_key_64_OBUF)
+     LUT4:I3->O            2   0.704   0.526  Mxor_out_31_0_xor0031_Result1 (out_31_0_xor0031)
+     LUT4:I1->O          130   0.704   1.468  out_0_mux00001 (round_key_0_OBUF)
+     LUT4:I0->O            1   0.704   0.000  s15/Mrom_out1010 (s15/Mrom_out1010)
+     MUXF5:I0->O           1   0.321   0.000  s15/Mrom_out10_f5_3 (s15/Mrom_out10_f54)
+     MUXF6:I1->O           1   0.521   0.000  s15/Mrom_out10_f6_1 (s15/Mrom_out10_f62)
+     MUXF7:I1->O           1   0.521   0.000  s15/Mrom_out10_f7_0 (s15/Mrom_out10_f71)
+     MUXF8:I0->O           3   0.521   0.566  s15/Mrom_out10_f8 (s15/Mrom_out10_f8)
+     LUT4:I2->O            5   0.704   0.712  out_109_mux00001 (round_key_109_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_77_mux00001 (out_77_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_77_mux0000_f5 (round_key_77_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0018_Result1 (out_31_0_xor0018)
+     LUT4:I1->O          129   0.704   1.468  out_13_mux00001 (round_key_13_OBUF)
+     LUT4:I0->O            1   0.704   0.000  s14/Mrom_out211 (s14/Mrom_out211)
+     MUXF5:I1->O           1   0.321   0.000  s14/Mrom_out2_f5_4 (s14/Mrom_out2_f55)
+     MUXF6:I0->O           1   0.521   0.000  s14/Mrom_out2_f6_1 (s14/Mrom_out2_f62)
+     MUXF7:I1->O           1   0.521   0.000  s14/Mrom_out2_f7_0 (s14/Mrom_out2_f71)
+     MUXF8:I0->O           3   0.521   0.566  s14/Mrom_out2_f8 (s14/Mrom_out2_f8)
+     LUT4:I2->O            5   0.704   0.712  out_113_mux00001 (round_key_113_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_81_mux00001 (out_81_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_81_mux0000_f5 (round_key_81_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0014_Result1 (out_31_0_xor0014)
+     LUT4:I1->O          130   0.704   1.468  out_17_mux00001 (round_key_17_OBUF)
+     LUT4:I0->O            1   0.704   0.000  s13/Mrom_out2 (s13/Mrom_out1)
+     MUXF5:I0->O           1   0.321   0.000  s13/Mrom_out_f5 (s13/Mrom_out_f5)
+     MUXF6:I1->O           1   0.521   0.000  s13/Mrom_out_f6 (s13/Mrom_out_f6)
+     MUXF7:I1->O           1   0.521   0.000  s13/Mrom_out_f7 (s13/Mrom_out_f7)
+     MUXF8:I1->O           2   0.521   0.526  s13/Mrom_out_f8 (s13/Mrom_out16)
+     LUT4:I1->O            3   0.704   0.566  out_120_mux0000 (round_key_120_OBUF)
+     LUT3:I2->O            4   0.704   0.666  Mxor_out_63_32_xor0033_Result1 (out_63_32_xor0033)
+     LUT4:I1->O            4   0.704   0.666  out_56_mux0000 (round_key_56_OBUF)
+     LUT4:I1->O            1   0.704   0.499  out_24_mux000056 (out_24_mux000056)
+     LUT3:I1->O          131   0.704   1.468  out_24_mux0000138 (round_key_24_OBUF)
+     LUT4:I0->O            1   0.704   0.000  s12/Mrom_out21 (s12/Mrom_out21)
+     MUXF5:I1->O           1   0.321   0.000  s12/Mrom_out2_f5 (s12/Mrom_out2_f5)
+     MUXF6:I1->O           1   0.521   0.000  s12/Mrom_out2_f6 (s12/Mrom_out2_f6)
+     MUXF7:I1->O           1   0.521   0.000  s12/Mrom_out2_f7 (s12/Mrom_out2_f7)
+     MUXF8:I1->O           3   0.521   0.566  s12/Mrom_out2_f8 (s12/Mrom_out2_f8)
+     LUT4:I2->O            5   0.704   0.712  out_97_mux00001 (round_key_97_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_65_mux00001 (out_65_mux0000)
+     MUXF5:I1->O           4   0.321   0.591  out_65_mux0000_f5 (round_key_65_OBUF)
+     LUT4:I3->O            2   0.704   0.526  Mxor_out_31_0_xor0030_Result1 (out_31_0_xor0030)
+     LUT4:I1->O          130   0.704   1.468  out_1_mux00001 (round_key_1_OBUF)
+     LUT4:I0->O            1   0.704   0.000  s15/Mrom_out41 (s15/Mrom_out41)
+     MUXF5:I1->O           1   0.321   0.000  s15/Mrom_out4_f5 (s15/Mrom_out4_f5)
+     MUXF6:I1->O           1   0.521   0.000  s15/Mrom_out4_f6 (s15/Mrom_out4_f6)
+     MUXF7:I1->O           1   0.521   0.000  s15/Mrom_out4_f7 (s15/Mrom_out4_f7)
+     MUXF8:I1->O           3   0.521   0.566  s15/Mrom_out4_f8 (s15/Mrom_out4_f8)
+     LUT4:I2->O            5   0.704   0.712  out_106_mux00001 (round_key_106_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_74_mux00001 (out_74_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_74_mux0000_f5 (round_key_74_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0021_Result1 (out_31_0_xor0021)
+     LUT4:I1->O          128   0.704   1.468  out_10_mux00001 (round_key_10_OBUF)
+     LUT4:I0->O            1   0.704   0.000  s14/Mrom_out41 (s14/Mrom_out41)
+     MUXF5:I1->O           1   0.321   0.000  s14/Mrom_out4_f5 (s14/Mrom_out4_f5)
+     MUXF6:I1->O           1   0.521   0.000  s14/Mrom_out4_f6 (s14/Mrom_out4_f6)
+     MUXF7:I1->O           1   0.521   0.000  s14/Mrom_out4_f7 (s14/Mrom_out4_f7)
+     MUXF8:I1->O           3   0.521   0.566  s14/Mrom_out4_f8 (s14/Mrom_out4_f8)
+     LUT4:I2->O            5   0.704   0.712  out_114_mux00001 (round_key_114_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_82_mux00001 (out_82_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_82_mux0000_f5 (round_key_82_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0013_Result1 (out_31_0_xor0013)
+     LUT4:I1->O          130   0.704   1.468  out_18_mux00001 (round_key_18_OBUF)
+     LUT4:I0->O            1   0.704   0.000  s13/Mrom_out142 (s13/Mrom_out142)
+     MUXF5:I0->O           1   0.321   0.000  s13/Mrom_out14_f5 (s13/Mrom_out14_f5)
+     MUXF6:I1->O           1   0.521   0.000  s13/Mrom_out14_f6 (s13/Mrom_out14_f6)
+     MUXF7:I1->O           1   0.521   0.000  s13/Mrom_out14_f7 (s13/Mrom_out14_f7)
+     MUXF8:I1->O           2   0.521   0.526  s13/Mrom_out14_f8 (s13/Mrom_out14_f8)
+     LUT4:I1->O            3   0.704   0.531  out_127_mux0000 (round_key_127_OBUF)
+     OBUF:I->O                 3.272          round_key_127_OBUF (round_key<127>)
+    ----------------------------------------
+    Total                    304.245ns (175.787ns logic, 128.458ns route)
+                                       (57.8% logic, 42.2% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 559362668890107290000000000000000000000000000000000 / 128
+-------------------------------------------------------------------------
+Delay:               303.646ns (Levels of Logic = 284)
+  Source:            in<95> (PAD)
+  Destination:       round_key<127> (PAD)
+
+  Data Path: in<95> to round_key<127>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.218   0.455  in_95_IBUF (in_95_IBUF)
+     LUT4:I2->O            1   0.704   0.424  out_95_mux0000_SW0 (N69)
+     LUT4:I3->O            2   0.704   0.622  out_95_mux0000 (round_key_95_OBUF)
+     LUT3:I0->O            5   0.704   0.712  Mxor_out_63_32_xor0039_Result1 (out_63_32_xor0039)
+     LUT4:I1->O            5   0.704   0.712  out_63_mux0000 (round_key_63_OBUF)
+     LUT3:I1->O            1   0.704   0.455  out_31_mux000016 (out_31_mux000016)
+     LUT4:I2->O           12   0.704   0.961  out_31_mux0000119 (round_key_31_OBUF)
+     MUXF8:S->O            3   0.850   0.566  s12/Mrom_out14_f8 (s12/Mrom_out14_f8)
+     LUT4:I2->O            5   0.704   0.712  out_103_mux00001 (round_key_103_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_71_mux00001 (out_71_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_71_mux0000_f5 (round_key_71_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0024_Result1 (out_31_0_xor0024)
+     LUT4:I1->O           10   0.704   0.882  out_7_mux00001 (round_key_7_OBUF)
+     MUXF8:S->O            3   0.850   0.566  s15/Mrom_out2_f8 (s15/Mrom_out2_f8)
+     LUT4:I2->O            5   0.704   0.712  out_105_mux00001 (round_key_105_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_73_mux00001 (out_73_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_73_mux0000_f5 (round_key_73_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0022_Result1 (out_31_0_xor0022)
+     LUT4:I1->O           10   0.704   0.882  out_9_mux00001 (round_key_9_OBUF)
+     MUXF8:S->O            3   0.850   0.566  s14/Mrom_out14_f8 (s14/Mrom_out14_f8)
+     LUT4:I2->O            5   0.704   0.712  out_119_mux00001 (round_key_119_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_87_mux00001 (out_87_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_87_mux0000_f5 (round_key_87_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0008_Result1 (out_31_0_xor0008)
+     LUT4:I1->O           10   0.704   0.882  out_23_mux00001 (round_key_23_OBUF)
+     MUXF8:S->O            2   0.850   0.526  s13/Mrom_out12_f8 (s13/Mrom_out12_f8)
+     LUT4:I1->O            3   0.704   0.566  out_126_mux0000 (round_key_126_OBUF)
+     LUT3:I2->O            4   0.704   0.666  Mxor_out_63_32_xor0038_Result1 (out_63_32_xor0038)
+     LUT4:I1->O            4   0.704   0.666  out_62_mux0000 (round_key_62_OBUF)
+     LUT4:I1->O            1   0.704   0.499  out_30_mux000056 (out_30_mux000056)
+     LUT3:I1->O           19   0.704   1.085  out_30_mux0000138 (round_key_30_OBUF)
+     MUXF7:S->O            1   0.850   0.000  s12/Mrom_out12_f7 (s12/Mrom_out12_f7)
+     MUXF8:I1->O           3   0.521   0.566  s12/Mrom_out12_f8 (s12/Mrom_out12_f8)
+     LUT4:I2->O            5   0.704   0.712  out_102_mux00001 (round_key_102_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_70_mux00001 (out_70_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_70_mux0000_f5 (round_key_70_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0025_Result1 (out_31_0_xor0025)
+     LUT4:I1->O           18   0.704   1.068  out_6_mux00001 (round_key_6_OBUF)
+     MUXF7:S->O            1   0.850   0.000  s15/Mrom_out_f7 (s15/Mrom_out_f7)
+     MUXF8:I1->O           3   0.521   0.566  s15/Mrom_out_f8 (s15/Mrom_out16)
+     LUT4:I2->O            5   0.704   0.712  out_104_mux00001 (round_key_104_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_72_mux00001 (out_72_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_72_mux0000_f5 (round_key_72_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0023_Result1 (out_31_0_xor0023)
+     LUT4:I1->O           18   0.704   1.068  out_8_mux00001 (round_key_8_OBUF)
+     MUXF7:S->O            1   0.850   0.000  s14/Mrom_out12_f7 (s14/Mrom_out12_f7)
+     MUXF8:I1->O           3   0.521   0.566  s14/Mrom_out12_f8 (s14/Mrom_out12_f8)
+     LUT4:I2->O            5   0.704   0.712  out_118_mux00001 (round_key_118_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_86_mux00001 (out_86_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_86_mux0000_f5 (round_key_86_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0009_Result1 (out_31_0_xor0009)
+     LUT4:I1->O           18   0.704   1.068  out_22_mux00001 (round_key_22_OBUF)
+     MUXF7:S->O            1   0.850   0.000  s13/Mrom_out10_f7 (s13/Mrom_out10_f7)
+     MUXF8:I1->O           2   0.521   0.526  s13/Mrom_out10_f8 (s13/Mrom_out10_f8)
+     LUT4:I1->O            3   0.704   0.566  out_125_mux0000 (round_key_125_OBUF)
+     LUT3:I2->O            4   0.704   0.666  Mxor_out_63_32_xor0037_Result1 (out_63_32_xor0037)
+     LUT4:I1->O            4   0.704   0.666  out_61_mux0000 (round_key_61_OBUF)
+     LUT4:I1->O            1   0.704   0.499  out_29_mux000056 (out_29_mux000056)
+     LUT3:I1->O           35   0.704   1.263  out_29_mux0000138 (round_key_29_OBUF)
+     MUXF6:S->O            1   0.850   0.000  s12/Mrom_out10_f6 (s12/Mrom_out10_f6)
+     MUXF7:I1->O           1   0.521   0.000  s12/Mrom_out10_f7 (s12/Mrom_out10_f7)
+     MUXF8:I1->O           3   0.521   0.566  s12/Mrom_out10_f8 (s12/Mrom_out10_f8)
+     LUT4:I2->O            5   0.704   0.712  out_101_mux00001 (round_key_101_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_69_mux00001 (out_69_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_69_mux0000_f5 (round_key_69_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0026_Result1 (out_31_0_xor0026)
+     LUT4:I1->O           34   0.704   1.263  out_5_mux00001 (round_key_5_OBUF)
+     MUXF6:S->O            1   0.850   0.000  s15/Mrom_out14_f6 (s15/Mrom_out14_f6)
+     MUXF7:I1->O           1   0.521   0.000  s15/Mrom_out14_f7 (s15/Mrom_out14_f7)
+     MUXF8:I1->O           3   0.521   0.566  s15/Mrom_out14_f8 (s15/Mrom_out14_f8)
+     LUT4:I2->O            5   0.704   0.712  out_111_mux00001 (round_key_111_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_79_mux00001 (out_79_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_79_mux0000_f5 (round_key_79_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0016_Result1 (out_31_0_xor0016)
+     LUT4:I1->O           34   0.704   1.263  out_15_mux00001 (round_key_15_OBUF)
+     MUXF6:S->O            1   0.850   0.000  s14/Mrom_out10_f6 (s14/Mrom_out10_f6)
+     MUXF7:I1->O           1   0.521   0.000  s14/Mrom_out10_f7 (s14/Mrom_out10_f7)
+     MUXF8:I1->O           3   0.521   0.566  s14/Mrom_out10_f8 (s14/Mrom_out10_f8)
+     LUT4:I2->O            5   0.704   0.712  out_117_mux00001 (round_key_117_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_85_mux00001 (out_85_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_85_mux0000_f5 (round_key_85_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0010_Result1 (out_31_0_xor0010)
+     LUT4:I1->O           34   0.704   1.263  out_21_mux00001 (round_key_21_OBUF)
+     MUXF6:S->O            1   0.850   0.000  s13/Mrom_out8_f6 (s13/Mrom_out8_f6)
+     MUXF7:I1->O           1   0.521   0.000  s13/Mrom_out8_f7 (s13/Mrom_out8_f7)
+     MUXF8:I1->O           2   0.521   0.526  s13/Mrom_out8_f8 (s13/Mrom_out8_f8)
+     LUT4:I1->O            3   0.704   0.566  out_124_mux0000 (round_key_124_OBUF)
+     LUT3:I2->O            4   0.704   0.666  Mxor_out_63_32_xor0036_Result1 (out_63_32_xor0036)
+     LUT4:I1->O            4   0.704   0.666  out_60_mux0000 (round_key_60_OBUF)
+     LUT4:I1->O            1   0.704   0.499  out_28_mux000056 (out_28_mux000056)
+     LUT3:I1->O           67   0.704   1.273  out_28_mux0000138 (round_key_28_OBUF)
+     MUXF5:S->O            1   0.739   0.000  s12/Mrom_out8_f5 (s12/Mrom_out8_f5)
+     MUXF6:I1->O           1   0.521   0.000  s12/Mrom_out8_f6 (s12/Mrom_out8_f6)
+     MUXF7:I1->O           1   0.521   0.000  s12/Mrom_out8_f7 (s12/Mrom_out8_f7)
+     MUXF8:I1->O           3   0.521   0.566  s12/Mrom_out8_f8 (s12/Mrom_out8_f8)
+     LUT4:I2->O            5   0.704   0.712  out_100_mux00001 (round_key_100_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_68_mux00001 (out_68_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_68_mux0000_f5 (round_key_68_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0027_Result1 (out_31_0_xor0027)
+     LUT4:I1->O           66   0.704   1.273  out_4_mux00001 (round_key_4_OBUF)
+     MUXF5:S->O            1   0.739   0.000  s15/Mrom_out12_f5 (s15/Mrom_out12_f5)
+     MUXF6:I1->O           1   0.521   0.000  s15/Mrom_out12_f6 (s15/Mrom_out12_f6)
+     MUXF7:I1->O           1   0.521   0.000  s15/Mrom_out12_f7 (s15/Mrom_out12_f7)
+     MUXF8:I1->O           3   0.521   0.566  s15/Mrom_out12_f8 (s15/Mrom_out12_f8)
+     LUT4:I2->O            5   0.704   0.712  out_110_mux00001 (round_key_110_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_78_mux00001 (out_78_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_78_mux0000_f5 (round_key_78_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0017_Result1 (out_31_0_xor0017)
+     LUT4:I1->O           66   0.704   1.273  out_14_mux00001 (round_key_14_OBUF)
+     MUXF5:S->O            1   0.739   0.000  s14/Mrom_out8_f5 (s14/Mrom_out8_f5)
+     MUXF6:I1->O           1   0.521   0.000  s14/Mrom_out8_f6 (s14/Mrom_out8_f6)
+     MUXF7:I1->O           1   0.521   0.000  s14/Mrom_out8_f7 (s14/Mrom_out8_f7)
+     MUXF8:I1->O           3   0.521   0.566  s14/Mrom_out8_f8 (s14/Mrom_out8_f8)
+     LUT4:I2->O            5   0.704   0.712  out_116_mux00001 (round_key_116_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_84_mux00001 (out_84_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_84_mux0000_f5 (round_key_84_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0011_Result1 (out_31_0_xor0011)
+     LUT4:I1->O           66   0.704   1.273  out_20_mux00001 (round_key_20_OBUF)
+     MUXF5:S->O            1   0.739   0.000  s13/Mrom_out6_f5 (s13/Mrom_out6_f5)
+     MUXF6:I1->O           1   0.521   0.000  s13/Mrom_out6_f6 (s13/Mrom_out6_f6)
+     MUXF7:I1->O           1   0.521   0.000  s13/Mrom_out6_f7 (s13/Mrom_out6_f7)
+     MUXF8:I1->O           2   0.521   0.526  s13/Mrom_out6_f8 (s13/Mrom_out6_f8)
+     LUT4:I1->O            3   0.704   0.566  out_123_mux0000 (round_key_123_OBUF)
+     LUT3:I2->O            4   0.704   0.666  Mxor_out_63_32_xor0035_Result1 (out_63_32_xor0035)
+     LUT4:I1->O            4   0.704   0.666  out_59_mux0000 (round_key_59_OBUF)
+     LUT4:I1->O            1   0.704   0.499  out_27_mux000056 (out_27_mux000056)
+     LUT3:I1->O          131   0.704   1.468  out_27_mux0000138 (round_key_27_OBUF)
+     LUT4:I0->O            1   0.704   0.000  s12/Mrom_out64 (s12/Mrom_out64)
+     MUXF5:I0->O           1   0.321   0.000  s12/Mrom_out6_f5_0 (s12/Mrom_out6_f51)
+     MUXF6:I0->O           1   0.521   0.000  s12/Mrom_out6_f6 (s12/Mrom_out6_f6)
+     MUXF7:I1->O           1   0.521   0.000  s12/Mrom_out6_f7 (s12/Mrom_out6_f7)
+     MUXF8:I1->O           3   0.521   0.566  s12/Mrom_out6_f8 (s12/Mrom_out6_f8)
+     LUT4:I2->O            5   0.704   0.712  out_99_mux00001 (round_key_99_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_67_mux00001 (out_67_mux0000)
+     MUXF5:I1->O           4   0.321   0.591  out_67_mux0000_f5 (round_key_67_OBUF)
+     LUT4:I3->O            2   0.704   0.526  Mxor_out_31_0_xor0028_Result1 (out_31_0_xor0028)
+     LUT4:I1->O          130   0.704   1.468  out_3_mux00001 (round_key_3_OBUF)
+     LUT4:I0->O            1   0.704   0.000  s15/Mrom_out811 (s15/Mrom_out811)
+     MUXF5:I1->O           1   0.321   0.000  s15/Mrom_out8_f5_4 (s15/Mrom_out8_f55)
+     MUXF6:I0->O           1   0.521   0.000  s15/Mrom_out8_f6_1 (s15/Mrom_out8_f62)
+     MUXF7:I1->O           1   0.521   0.000  s15/Mrom_out8_f7_0 (s15/Mrom_out8_f71)
+     MUXF8:I0->O           3   0.521   0.566  s15/Mrom_out8_f8 (s15/Mrom_out8_f8)
+     LUT4:I2->O            5   0.704   0.712  out_108_mux00001 (round_key_108_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_76_mux00001 (out_76_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_76_mux0000_f5 (round_key_76_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0019_Result1 (out_31_0_xor0019)
+     LUT4:I1->O          128   0.704   1.468  out_12_mux00001 (round_key_12_OBUF)
+     LUT4:I0->O            1   0.704   0.000  s14/Mrom_out66 (s14/Mrom_out66)
+     MUXF5:I0->O           1   0.321   0.000  s14/Mrom_out6_f5_1 (s14/Mrom_out6_f52)
+     MUXF6:I1->O           1   0.521   0.000  s14/Mrom_out6_f6_0 (s14/Mrom_out6_f61)
+     MUXF7:I0->O           1   0.521   0.000  s14/Mrom_out6_f7 (s14/Mrom_out6_f7)
+     MUXF8:I1->O           3   0.521   0.566  s14/Mrom_out6_f8 (s14/Mrom_out6_f8)
+     LUT4:I2->O            5   0.704   0.712  out_115_mux00001 (round_key_115_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_83_mux00001 (out_83_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_83_mux0000_f5 (round_key_83_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0012_Result1 (out_31_0_xor0012)
+     LUT4:I1->O          130   0.704   1.468  out_19_mux00001 (round_key_19_OBUF)
+     LUT4:I0->O            1   0.704   0.000  s13/Mrom_out48 (s13/Mrom_out48)
+     MUXF5:I0->O           1   0.321   0.000  s13/Mrom_out4_f5_2 (s13/Mrom_out4_f53)
+     MUXF6:I0->O           1   0.521   0.000  s13/Mrom_out4_f6_0 (s13/Mrom_out4_f61)
+     MUXF7:I0->O           1   0.521   0.000  s13/Mrom_out4_f7 (s13/Mrom_out4_f7)
+     MUXF8:I1->O           2   0.521   0.526  s13/Mrom_out4_f8 (s13/Mrom_out4_f8)
+     LUT4:I1->O            3   0.704   0.566  out_122_mux0000 (round_key_122_OBUF)
+     LUT3:I2->O            4   0.704   0.666  Mxor_out_63_32_xor0034_Result1 (out_63_32_xor0034)
+     LUT4:I1->O            4   0.704   0.666  out_58_mux0000 (round_key_58_OBUF)
+     LUT4:I1->O            1   0.704   0.499  out_26_mux000056 (out_26_mux000056)
+     LUT3:I1->O          131   0.704   1.468  out_26_mux0000138 (round_key_26_OBUF)
+     LUT4:I0->O            1   0.704   0.000  s12/Mrom_out44 (s12/Mrom_out44)
+     MUXF5:I0->O           1   0.321   0.000  s12/Mrom_out4_f5_0 (s12/Mrom_out4_f51)
+     MUXF6:I0->O           1   0.521   0.000  s12/Mrom_out4_f6 (s12/Mrom_out4_f6)
+     MUXF7:I1->O           1   0.521   0.000  s12/Mrom_out4_f7 (s12/Mrom_out4_f7)
+     MUXF8:I1->O           3   0.521   0.566  s12/Mrom_out4_f8 (s12/Mrom_out4_f8)
+     LUT4:I2->O            5   0.704   0.712  out_98_mux00001 (round_key_98_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_66_mux00001 (out_66_mux0000)
+     MUXF5:I1->O           4   0.321   0.591  out_66_mux0000_f5 (round_key_66_OBUF)
+     LUT4:I3->O            2   0.704   0.526  Mxor_out_31_0_xor0029_Result1 (out_31_0_xor0029)
+     LUT4:I1->O          130   0.704   1.372  out_2_mux00001 (round_key_2_OBUF)
+     LUT4:I1->O            1   0.704   0.000  s15/Mrom_out64 (s15/Mrom_out64)
+     MUXF5:I0->O           1   0.321   0.000  s15/Mrom_out6_f5_0 (s15/Mrom_out6_f51)
+     MUXF6:I0->O           1   0.521   0.000  s15/Mrom_out6_f6 (s15/Mrom_out6_f6)
+     MUXF7:I1->O           1   0.521   0.000  s15/Mrom_out6_f7 (s15/Mrom_out6_f7)
+     MUXF8:I1->O           3   0.521   0.566  s15/Mrom_out6_f8 (s15/Mrom_out6_f8)
+     LUT4:I2->O            5   0.704   0.712  out_107_mux00001 (round_key_107_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_75_mux00001 (out_75_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_75_mux0000_f5 (round_key_75_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0020_Result1 (out_31_0_xor0020)
+     LUT4:I1->O          130   0.704   1.468  out_11_mux00001 (round_key_11_OBUF)
+     LUT4:I0->O            1   0.704   0.000  s14/Mrom_out4 (s14/Mrom_out3)
+     MUXF5:I0->O           1   0.321   0.000  s14/Mrom_out_f5_0 (s14/Mrom_out_f51)
+     MUXF6:I0->O           1   0.521   0.000  s14/Mrom_out_f6 (s14/Mrom_out_f6)
+     MUXF7:I1->O           1   0.521   0.000  s14/Mrom_out_f7 (s14/Mrom_out_f7)
+     MUXF8:I1->O           3   0.521   0.566  s14/Mrom_out_f8 (s14/Mrom_out16)
+     LUT4:I2->O            5   0.704   0.712  out_112_mux00001 (round_key_112_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_80_mux00001 (out_80_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_80_mux0000_f5 (round_key_80_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0015_Result1 (out_31_0_xor0015)
+     LUT4:I1->O          130   0.704   1.468  out_16_mux00001 (round_key_16_OBUF)
+     LUT4:I0->O            1   0.704   0.000  s13/Mrom_out21 (s13/Mrom_out21)
+     MUXF5:I1->O           1   0.321   0.000  s13/Mrom_out2_f5 (s13/Mrom_out2_f5)
+     MUXF6:I1->O           1   0.521   0.000  s13/Mrom_out2_f6 (s13/Mrom_out2_f6)
+     MUXF7:I1->O           1   0.521   0.000  s13/Mrom_out2_f7 (s13/Mrom_out2_f7)
+     MUXF8:I1->O           2   0.521   0.526  s13/Mrom_out2_f8 (s13/Mrom_out2_f8)
+     LUT4:I1->O            3   0.704   0.566  out_121_mux0000 (round_key_121_OBUF)
+     LUT3:I2->O            4   0.704   0.666  Mxor_out_63_32_xor0032_Result1 (out_63_32_xor0032)
+     LUT4:I1->O            4   0.704   0.666  out_57_mux0000 (round_key_57_OBUF)
+     LUT4:I1->O            1   0.704   0.499  out_25_mux000056 (out_25_mux000056)
+     LUT3:I1->O          131   0.704   1.468  out_25_mux0000138 (round_key_25_OBUF)
+     LUT4:I0->O            1   0.704   0.000  s12/Mrom_out2 (s12/Mrom_out1)
+     MUXF5:I0->O           1   0.321   0.000  s12/Mrom_out_f5 (s12/Mrom_out_f5)
+     MUXF6:I1->O           1   0.521   0.000  s12/Mrom_out_f6 (s12/Mrom_out_f6)
+     MUXF7:I1->O           1   0.521   0.000  s12/Mrom_out_f7 (s12/Mrom_out_f7)
+     MUXF8:I1->O           3   0.521   0.566  s12/Mrom_out_f8 (s12/Mrom_out16)
+     LUT4:I2->O            5   0.704   0.712  out_96_mux00001 (round_key_96_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_64_mux00001 (out_64_mux0000)
+     MUXF5:I1->O           4   0.321   0.591  out_64_mux0000_f5 (round_key_64_OBUF)
+     LUT4:I3->O            2   0.704   0.526  Mxor_out_31_0_xor0031_Result1 (out_31_0_xor0031)
+     LUT4:I1->O          130   0.704   1.468  out_0_mux00001 (round_key_0_OBUF)
+     LUT4:I0->O            1   0.704   0.000  s15/Mrom_out1010 (s15/Mrom_out1010)
+     MUXF5:I0->O           1   0.321   0.000  s15/Mrom_out10_f5_3 (s15/Mrom_out10_f54)
+     MUXF6:I1->O           1   0.521   0.000  s15/Mrom_out10_f6_1 (s15/Mrom_out10_f62)
+     MUXF7:I1->O           1   0.521   0.000  s15/Mrom_out10_f7_0 (s15/Mrom_out10_f71)
+     MUXF8:I0->O           3   0.521   0.566  s15/Mrom_out10_f8 (s15/Mrom_out10_f8)
+     LUT4:I2->O            5   0.704   0.712  out_109_mux00001 (round_key_109_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_77_mux00001 (out_77_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_77_mux0000_f5 (round_key_77_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0018_Result1 (out_31_0_xor0018)
+     LUT4:I1->O          129   0.704   1.468  out_13_mux00001 (round_key_13_OBUF)
+     LUT4:I0->O            1   0.704   0.000  s14/Mrom_out211 (s14/Mrom_out211)
+     MUXF5:I1->O           1   0.321   0.000  s14/Mrom_out2_f5_4 (s14/Mrom_out2_f55)
+     MUXF6:I0->O           1   0.521   0.000  s14/Mrom_out2_f6_1 (s14/Mrom_out2_f62)
+     MUXF7:I1->O           1   0.521   0.000  s14/Mrom_out2_f7_0 (s14/Mrom_out2_f71)
+     MUXF8:I0->O           3   0.521   0.566  s14/Mrom_out2_f8 (s14/Mrom_out2_f8)
+     LUT4:I2->O            5   0.704   0.712  out_113_mux00001 (round_key_113_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_81_mux00001 (out_81_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_81_mux0000_f5 (round_key_81_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0014_Result1 (out_31_0_xor0014)
+     LUT4:I1->O          130   0.704   1.468  out_17_mux00001 (round_key_17_OBUF)
+     LUT4:I0->O            1   0.704   0.000  s13/Mrom_out2 (s13/Mrom_out1)
+     MUXF5:I0->O           1   0.321   0.000  s13/Mrom_out_f5 (s13/Mrom_out_f5)
+     MUXF6:I1->O           1   0.521   0.000  s13/Mrom_out_f6 (s13/Mrom_out_f6)
+     MUXF7:I1->O           1   0.521   0.000  s13/Mrom_out_f7 (s13/Mrom_out_f7)
+     MUXF8:I1->O           2   0.521   0.526  s13/Mrom_out_f8 (s13/Mrom_out16)
+     LUT4:I1->O            3   0.704   0.566  out_120_mux0000 (round_key_120_OBUF)
+     LUT3:I2->O            4   0.704   0.666  Mxor_out_63_32_xor0033_Result1 (out_63_32_xor0033)
+     LUT4:I1->O            4   0.704   0.666  out_56_mux0000 (round_key_56_OBUF)
+     LUT4:I1->O            1   0.704   0.499  out_24_mux000056 (out_24_mux000056)
+     LUT3:I1->O          131   0.704   1.468  out_24_mux0000138 (round_key_24_OBUF)
+     LUT4:I0->O            1   0.704   0.000  s12/Mrom_out21 (s12/Mrom_out21)
+     MUXF5:I1->O           1   0.321   0.000  s12/Mrom_out2_f5 (s12/Mrom_out2_f5)
+     MUXF6:I1->O           1   0.521   0.000  s12/Mrom_out2_f6 (s12/Mrom_out2_f6)
+     MUXF7:I1->O           1   0.521   0.000  s12/Mrom_out2_f7 (s12/Mrom_out2_f7)
+     MUXF8:I1->O           3   0.521   0.566  s12/Mrom_out2_f8 (s12/Mrom_out2_f8)
+     LUT4:I2->O            5   0.704   0.712  out_97_mux00001 (round_key_97_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_65_mux00001 (out_65_mux0000)
+     MUXF5:I1->O           4   0.321   0.591  out_65_mux0000_f5 (round_key_65_OBUF)
+     LUT4:I3->O            2   0.704   0.526  Mxor_out_31_0_xor0030_Result1 (out_31_0_xor0030)
+     LUT4:I1->O          130   0.704   1.468  out_1_mux00001 (round_key_1_OBUF)
+     LUT4:I0->O            1   0.704   0.000  s15/Mrom_out41 (s15/Mrom_out41)
+     MUXF5:I1->O           1   0.321   0.000  s15/Mrom_out4_f5 (s15/Mrom_out4_f5)
+     MUXF6:I1->O           1   0.521   0.000  s15/Mrom_out4_f6 (s15/Mrom_out4_f6)
+     MUXF7:I1->O           1   0.521   0.000  s15/Mrom_out4_f7 (s15/Mrom_out4_f7)
+     MUXF8:I1->O           3   0.521   0.566  s15/Mrom_out4_f8 (s15/Mrom_out4_f8)
+     LUT4:I2->O            5   0.704   0.712  out_106_mux00001 (round_key_106_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_74_mux00001 (out_74_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_74_mux0000_f5 (round_key_74_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0021_Result1 (out_31_0_xor0021)
+     LUT4:I1->O          128   0.704   1.468  out_10_mux00001 (round_key_10_OBUF)
+     LUT4:I0->O            1   0.704   0.000  s14/Mrom_out41 (s14/Mrom_out41)
+     MUXF5:I1->O           1   0.321   0.000  s14/Mrom_out4_f5 (s14/Mrom_out4_f5)
+     MUXF6:I1->O           1   0.521   0.000  s14/Mrom_out4_f6 (s14/Mrom_out4_f6)
+     MUXF7:I1->O           1   0.521   0.000  s14/Mrom_out4_f7 (s14/Mrom_out4_f7)
+     MUXF8:I1->O           3   0.521   0.566  s14/Mrom_out4_f8 (s14/Mrom_out4_f8)
+     LUT4:I2->O            5   0.704   0.712  out_114_mux00001 (round_key_114_OBUF)
+     LUT4:I1->O            1   0.704   0.000  out_82_mux00001 (out_82_mux0000)
+     MUXF5:I1->O           4   0.321   0.762  out_82_mux0000_f5 (round_key_82_OBUF)
+     LUT4:I0->O            2   0.704   0.526  Mxor_out_31_0_xor0013_Result1 (out_31_0_xor0013)
+     LUT4:I1->O          130   0.704   1.468  out_18_mux00001 (round_key_18_OBUF)
+     LUT4:I0->O            1   0.704   0.000  s13/Mrom_out142 (s13/Mrom_out142)
+     MUXF5:I0->O           1   0.321   0.000  s13/Mrom_out14_f5 (s13/Mrom_out14_f5)
+     MUXF6:I1->O           1   0.521   0.000  s13/Mrom_out14_f6 (s13/Mrom_out14_f6)
+     MUXF7:I1->O           1   0.521   0.000  s13/Mrom_out14_f7 (s13/Mrom_out14_f7)
+     MUXF8:I1->O           2   0.521   0.526  s13/Mrom_out14_f8 (s13/Mrom_out14_f8)
+     LUT4:I1->O            3   0.704   0.531  out_127_mux0000 (round_key_127_OBUF)
+     OBUF:I->O                 3.272          round_key_127_OBUF (round_key<127>)
+    ----------------------------------------
+    Total                    303.646ns (176.414ns logic, 127.232ns route)
+                                       (58.1% logic, 41.9% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 13.00 secs
+Total CPU time to Xst completion: 13.40 secs
+ 
+--> 
+
+Total memory usage is 266380 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  132 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

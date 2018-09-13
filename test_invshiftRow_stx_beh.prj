@@ -1,0 +1,3 @@
+verilog isim_temp "invshiftRow.v"
+verilog isim_temp "test_invshiftRow.v"
+verilog isim_temp "C:/Xilinx/14.2/ISE_DS/ISE//verilog/src/glbl.v"

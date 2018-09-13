@@ -1,0 +1,53 @@
+Release 14.2 - xst P.28xd (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to F:/PROJECTS/final_year_project/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Parameter xsthdpdir set to F:/PROJECTS/final_year_project/xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "xtime.v" in library work
+Compiling verilog file "subbyte.v" in library work
+Module <xtime> compiled
+Compiling verilog file "shiftRow.v" in library work
+Module <subbyte> compiled
+Compiling verilog file "mult.v" in library work
+Module <shiftRow> compiled
+Compiling verilog file "subbyteShiftRow.v" in library work
+Module <mult> compiled
+Compiling verilog file "row2col.v" in library work
+Module <subbyteShiftRow> compiled
+Compiling verilog file "mixcolum.v" in library work
+Module <row2column> compiled
+Compiling verilog file "keyexpansion_new.v" in library work
+Module <mixcolum> compiled
+Compiling verilog file "main_aes.v" in library work
+Module <keyexpansion_new> compiled
+Module <main_aes> compiled
+No errors in compilation
+Analysis of file <"main_aes.prj"> succeeded.
+ 
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.17 secs
+ 
+--> 
+
+Total memory usage is 210216 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

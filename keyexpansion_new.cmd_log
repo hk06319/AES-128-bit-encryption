@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "F:/PROJECTS/final_year_project/keyexpansion_new.xst" -ofn "F:/PROJECTS/final_year_project/keyexpansion_new.syr" 

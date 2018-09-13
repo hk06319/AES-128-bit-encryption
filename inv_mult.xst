@@ -1,0 +1,5 @@
+set -tmpdir "F:/PROJECTS/final_year_project/xst/projnav.tmp"
+set -xsthdpdir "F:/PROJECTS/final_year_project/xst"
+elaborate
+-ifn inv_mult.prj
+-ifmt mixed

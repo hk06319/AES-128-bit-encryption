@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# PlanAhead v14.2 (64-bit)
+# Build 194362 by xbuild on Fri Jul 20 18:52:11 MDT 2012
+# Start of session at: Fri Nov 22 15:30:08 2013
+# Process ID: 5164
+# Log file: F:/PROJECTS/final_year_project/planAhead_run_2/planAhead.log
+# Journal file: F:/PROJECTS/final_year_project/planAhead_run_2/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source F:/PROJECTS/final_year_project/pa.fromHdl.tcl
+startgroup
+set_property package_pin D18 [get_ports clk1]
+endgroup
+save_design
